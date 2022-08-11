@@ -28,6 +28,17 @@ public class User implements Serializable{
 	@Column
 	private String phonenumber;
 
+	
+	
+	public User(String email, String fname, String lname, String position, String phonenumber) {
+		super();
+		this.email = email;
+		this.fname = fname;
+		this.lname = lname;
+		this.position = position;
+		this.phonenumber = phonenumber;
+	}
+
 	@Override
 	public String toString() {
 		return "Users [email=" + email + ", fname=" + fname + ", lname=" + lname + ", position=" + position
