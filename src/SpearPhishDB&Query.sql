@@ -19,10 +19,10 @@ create table IF NOT EXISTS emails (
 );
 
 create table IF NOT EXISTS evals (
+	id int auto_increment PRIMARY KEY,
 	FK_email varchar(255) references users(email),
     FK_id int REFERENCES emails(id),
-    isEvalPhish boolean,
-    PRIMARY KEY(FK_email, FK_id)
+    is_eval_phish boolean
 );
 
 /* Views for TP/TN/FP/FN accuracy queries */

@@ -1,6 +1,9 @@
 package PasqualeMonniello.SpearPhishingBackend.controller;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import PasqualeMonniello.SpearPhishingBackend.model.Eval;
-import PasqualeMonniello.SpearPhishingBackend.model.EvalKey;
 import PasqualeMonniello.SpearPhishingBackend.repository.EvalsRepository;
 
 @RestController
@@ -26,20 +28,31 @@ public class EvalsController {
 	EvalsRepository evalRepository;
 	
 	@CrossOrigin
-	@GetMapping("/evals/{email}/{id}")
-	public Eval getEvalByIds(@PathVariable(value="email") String target, @PathVariable(value="id") Long emailId) {
-		return evalRepository.findById(new EvalKey(target,emailId)).orElseThrow(()-> new RuntimeException(""));
+	@GetMapping("/eval/{id}")
+	public Eval getEvalByIds(@PathVariable(value="id") Long evalId) {
+		return evalRepository.findById(evalId).orElseThrow(()-> new RuntimeException("Evaluation not found"));
 	}
 	
 	@CrossOrigin
-	@GetMapping("/evals/{email}")
+	@GetMapping("/evals/{email}/{id}")
+	public Eval getEvalCombined(@PathVariable(value="email") String target, @PathVariable(value="id") Long emailId) {
+		EvalsSpec spec = new EvalsSpec(new SearchCriteria("FK_email",":",target));
+		List<Eval> list1 = evalRepository.findAll(spec);
+		EvalsSpec spec2 = new EvalsSpec(new SearchCriteria("FK_id",":",emailId));
+		List<Eval> list2 = evalRepository.findAll(spec2);
+		Set<Eval> res = list1.stream().distinct().filter(list2::contains).collect(Collectors.toSet());
+		return (new ArrayList<Eval>(res)).get(0);
+	}
+	
+	@CrossOrigin
+	@GetMapping("/evals/email/{email}")
 	public List<Eval> getEvalsByTarget(@PathVariable(value="email") String target) {
 		EvalsSpec spec = new EvalsSpec(new SearchCriteria("FK_email",":",target));
 		return evalRepository.findAll(spec);
 	}
 	
 	@CrossOrigin
-	@GetMapping("/evals/{id}")
+	@GetMapping("/evals/id/{id}")
 	public List<Eval> getEvalsByEmail(@PathVariable(value="id") Long emailId) {
 		EvalsSpec spec = new EvalsSpec(new SearchCriteria("FK_id",":",emailId));
 		return evalRepository.findAll(spec);
@@ -52,9 +65,9 @@ public class EvalsController {
 	}
 	
 	@CrossOrigin
-	@DeleteMapping("/eval/{email}/{id}")
-	public ResponseEntity<?> postEval(@PathVariable(value="email") String target, @PathVariable(value="id") Long emailId) {
-		Eval e = evalRepository.findById(new EvalKey(target,emailId)).orElseThrow(()-> new RuntimeException(""));
+	@DeleteMapping("/eval/{id}")
+	public ResponseEntity<?> postEval(@PathVariable(value="id") Long evalId) {
+		Eval e = evalRepository.findById(evalId).orElseThrow(()-> new RuntimeException("Evaluation not found"));
 		
 		evalRepository.delete(e);
 		
@@ -63,9 +76,9 @@ public class EvalsController {
 	}
 	
 	@CrossOrigin
-	@PutMapping("/eval/{email}/{id}")
-	public Eval updateEmail(@PathVariable(value="email") String target, @PathVariable(value="id") Long emailId, @RequestBody Eval ev) {
-		Eval e = evalRepository.findById(new EvalKey(target,emailId)).orElseThrow(()-> new RuntimeException(""));
+	@PutMapping("/eval/{id}")
+	public Eval updateEmail(@PathVariable(value="id") Long evalId, @RequestBody Eval ev) {
+		Eval e = evalRepository.findById(evalId).orElseThrow(()-> new RuntimeException("Evaluation not found"));
 		e.setFK_id(ev.getFK_id());
 		e.setFK_email(ev.getFK_email());
 		e.setEvalPhish(ev.isEvalPhish());

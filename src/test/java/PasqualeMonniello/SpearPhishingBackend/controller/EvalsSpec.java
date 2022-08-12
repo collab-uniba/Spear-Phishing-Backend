@@ -11,6 +11,10 @@ import PasqualeMonniello.SpearPhishingBackend.model.Email;
 import PasqualeMonniello.SpearPhishingBackend.model.Eval;
 
 public class EvalsSpec implements Specification<Eval>{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2540104624491439078L;
 	private SearchCriteria criteria;
 	
 	public EvalsSpec(SearchCriteria criteria) {
