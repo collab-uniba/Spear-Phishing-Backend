@@ -57,6 +57,7 @@ public class EmailController {
 	@PutMapping("/email/{id}")
 	public Email updateEmail(@PathVariable(value="id") Long emailId, @RequestBody Email email) {
 		Email e = emailRepository.findById(emailId).orElseThrow(()-> new EmailNotfFoundException());
+		e.setSubj(email.getSubj());
 		e.setFK_target(email.getFK_target());
 		e.setContent(email.getContent());
 		return emailRepository.save(e);

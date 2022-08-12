@@ -9,6 +9,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Entity
 @Table(name="evals")
 @EntityListeners(AuditingEntityListener.class)
+@IdClass(EvalKey.class)
 public class Eval implements Serializable {
 
 	/**

@@ -13,12 +13,11 @@ import PasqualeMonniello.SpearPhishingBackend.Builders.JSONBuilder;
 public class test {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		File eml = new File("E:\\CodeProjects\\Eclipse\\SpearPhishingBackend\\src\\emails\\email.eml");
+		File eml = new File("E:\\CodeProjects\\Eclipse\\SpearPhishingBackend\\src\\emails\\email2.eml");
 		Email email = EmailConverter.emlToEmail(eml);
 		try {
 			JSONObject obj = JSONBuilder.buildEmail(email);
-			System.out.println(email.getRecipients().get(0).getAddress());
-			System.out.println(obj.toString(2));
+			System.out.println(obj.get("html"));
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

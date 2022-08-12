@@ -1,3 +1,6 @@
+CREATE SCHEMA IF NOT EXISTS spearphishing;
+use spearphishing;
+
 create table users (
 	email varchar(255) UNIQUE PRIMARY KEY,
     fname varchar(15) NOT NULL,
@@ -8,6 +11,7 @@ create table users (
 
 create table emails (
     id int auto_increment PRIMARY KEY,
+    subj varchar(255),
     FK_target varchar(255) references users(email),
     content MEDIUMTEXT,
     isPhish boolean
@@ -16,7 +20,8 @@ create table emails (
 create table evals (
 	FK_email varchar(255) references users(email),
     FK_id int REFERENCES emails(id),
-    isEvalPhish boolean
+    isEvalPhish boolean,
+    PRIMARY KEY(FK_email, FK_id)
 );
 
 /* Views for TP/TN/FP/FN accuracy queries */

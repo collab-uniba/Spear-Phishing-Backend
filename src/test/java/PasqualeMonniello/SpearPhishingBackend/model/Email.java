@@ -18,6 +18,9 @@ public class Email implements Serializable {
 	private Long id;
 	
 	@Column(nullable=false)
+	private String subj;
+	
+	@Column(nullable=false)
 	private String FK_target;
 	
 	@Column(nullable=false)
@@ -42,15 +45,25 @@ public class Email implements Serializable {
 	public String getContent() {
 		return content;
 	}
-
+	
 	public void setContent(String content) {
 		this.content = content;
 	}
 
+	public String getSubj() {
+		return subj;
+	}
+
+	public void setSubj(String subj) {
+		this.subj = subj;
+	}
+
 	@Override
 	public String toString() {
-		return "Email [id=" + id + ", FK_target=" + FK_target + ", content=" + content + "]";
+		return "Email [id=" + id + ", subj=" + subj + ", FK_target=" + FK_target + ", content=" + content + "]";
 	}
+
+
 	
 	
 }

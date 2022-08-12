@@ -63,7 +63,7 @@ public class EvalsController {
 	}
 	
 	@CrossOrigin
-	@PutMapping("/email/{id}")
+	@PutMapping("/eval/{email}/{id}")
 	public Eval updateEmail(@PathVariable(value="email") String target, @PathVariable(value="id") Long emailId, @RequestBody Eval ev) {
 		Eval e = evalRepository.findById(new EvalKey(target,emailId)).orElseThrow(()-> new RuntimeException(""));
 		e.setFK_id(ev.getFK_id());

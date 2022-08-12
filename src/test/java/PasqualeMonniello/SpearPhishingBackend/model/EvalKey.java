@@ -1,10 +1,16 @@
 package PasqualeMonniello.SpearPhishingBackend.model;
 
 import javax.persistence.IdClass;
+
+import java.io.Serializable;
+
 import javax.persistence.Id;
 
-@IdClass(Eval.class)
-public class EvalKey {
+public class EvalKey implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3275658633527386733L;
 	@Id
 	private String FK_varchar;
 	@Id

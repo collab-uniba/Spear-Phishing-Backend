@@ -1,0 +1,651 @@
+Delivered-To: pasquale.monniello00@gmail.com
+Received: by 2002:a05:6f02:607:b0:21:fe52:29c2 with SMTP id 7csp477586rce;
+        Thu, 11 Aug 2022 18:08:54 -0700 (PDT)
+X-Google-Smtp-Source: AA6agR60fzX9ViA8+j0LyB800X32ODKhS1J2i4RwGfujt4lIrTKCQwGCCYcQMLsdWMI4x+GHxWzt
+X-Received: by 2002:ad4:5d66:0:b0:474:8552:2615 with SMTP id fn6-20020ad45d66000000b0047485522615mr1667531qvb.115.1660266534570;
+        Thu, 11 Aug 2022 18:08:54 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1660266534; cv=none;
+        d=google.com; s=arc-20160816;
+        b=l3ljEwbrxmubWWI4ydDC0cL8B4RU8Shy6pKdE4a6dORuabE6zCXc1yD1LXlNoJVlOk
+         MlP/hGKhJr4Kwu7SbF2gfAxBQx1Hf833VdCtf0SBz4NMbR1kDJPkHHTrJILzO3UOF8nU
+         DlmJhsoPVOjblAPu50iG3EyM0uz59mMZgDFv1/LMeXFUKeFp1yk8mql4rTmdn+BhmP0z
+         OqxO36lD4xpF8r6q8GXpdVisjC1n0bCPMZGNx9sE5EZ/H1Ycm+pHBf5o+7mQePYdPaZm
+         OYtn7NOR50ju0+9qqjynYRSnMICMRmuoaVfMG1a4A0nifwck8xfIzJXZiPvOTcuM7bDV
+         dsKw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:reply-to:subject:message-id:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=IGNgrI1CUUPfBpPWOFOX50M2EQSUzBbL+hNu7XI7lgU=;
+        b=hyb/wh+a4smqekK6qbTPmwrh7EKEANqAe6LkYQT6M/ENs8rT+JLPMbDj7Xs1ExyPAn
+         07t2bdHPTmSzz4AYbf6pomLQrObyQ3jRuYPhvbc/4FEKVPtM0C60cp2jh1GKZeyOwgZ6
+         Fh2Wg6t2iuMqkIGKUjLHJSHw+OaJuv63yyxiHeIZjWB7lxwgC59ahGaJTMD+EwAmRgnL
+         GJfnLalXx/iu71zDm0vNgI6wjrLltd3cXJ0QMHlyW0oK21Hx6KmILV8f1XyDfPvUf8CG
+         yZ5x+x1Z+ZegS1rjVNMECFHXwD7TAxOesQqT8mx0wQRs66WE4rCFh0b6lBnqEPBWhulW
+         BBBQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@glassdoor.com header.s=s1 header.b=GQ8HUPPI;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=PdY2yZIy;
+       spf=pass (google.com: domain of bounces+361267-29ca-pasquale.monniello00=gmail.com@mail9.glassdoor.com designates 50.31.57.90 as permitted sender) smtp.mailfrom="bounces+361267-29ca-pasquale.monniello00=gmail.com@mail9.glassdoor.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=glassdoor.com
+Return-Path: <bounces+361267-29ca-pasquale.monniello00=gmail.com@mail9.glassdoor.com>
+Received: from o5.mail8.glassdoor.com (o5.mail8.glassdoor.com. [50.31.57.90])
+        by mx.google.com with ESMTPS id 8-20020a0562140dc800b00476d224c00asi366053qvt.417.2022.08.11.18.08.54
+        for <pasquale.monniello00@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 11 Aug 2022 18:08:54 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+361267-29ca-pasquale.monniello00=gmail.com@mail9.glassdoor.com designates 50.31.57.90 as permitted sender) client-ip=50.31.57.90;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@glassdoor.com header.s=s1 header.b=GQ8HUPPI;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=PdY2yZIy;
+       spf=pass (google.com: domain of bounces+361267-29ca-pasquale.monniello00=gmail.com@mail9.glassdoor.com designates 50.31.57.90 as permitted sender) smtp.mailfrom="bounces+361267-29ca-pasquale.monniello00=gmail.com@mail9.glassdoor.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=glassdoor.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=glassdoor.com;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	reply-to:x-feedback-id:to:cc;
+	s=s1; bh=IGNgrI1CUUPfBpPWOFOX50M2EQSUzBbL+hNu7XI7lgU=;
+	b=GQ8HUPPIW+1LUUjD9NFcIL6IaXLpXcQbPOf9fN4F7vZJ2JgVqdf2DqyEEQToik4fnwlF
+	v2b77hoZ9cHxJ83nq962FvZRnHGZ7H+OL4KcqxUtXENwgKfonM6ejaQcH0zUTd7F+4zwkd
+	e5GAKWXz3t8UPTXvbntPvzYVuoF3ZEcknwCLhr8LYmrKtZroUiR2TaQ9UxK03McmkBpjNe
+	kB5Hml4UO54NxlgI1Fe4MzPxiLdICWFu17Vu0xQKuU4nm0JKR1OoHfq+pK0fE98nA5TNQm
+	hmpjXG9h72SHqKzR/5i22ai2N4//cfbCM30AkzEahUZHFkOd0WC+CmTnAt0hZSaw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	reply-to:x-feedback-id:to:cc;
+	s=smtpapi; bh=IGNgrI1CUUPfBpPWOFOX50M2EQSUzBbL+hNu7XI7lgU=;
+	b=PdY2yZIyBb4zBKq1QUKAYag6XRSYWsPo4c4vZyzpAdLYTzf3eA42UKi1owS5D65CVLUs
+	O9hr953ioeSPu8gfGgJDPV0aaj3jNMy/MhS7S3J93TiDhfG0lZqLFWL/1J03EuPhG1sTMh
+	e3tCCqOazg+VLoxpzkuWYuLQhjxBSegUo=
+Received: by filterdrecv-689c9d987c-zrbjl with SMTP id filterdrecv-689c9d987c-zrbjl-1-62F5A825-35
+        2022-08-12 01:08:53.614113878 +0000 UTC m=+1832632.379665862
+Received: from MzYxMjY3 (unknown)
+	by geopod-ismtpd-6-1 (SG) with HTTP
+	id 0Ow2gKqGTDiPeVAKT84Wjw
+	Fri, 12 Aug 2022 01:08:53.606 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Date: Fri, 12 Aug 2022 01:08:53 +0000 (UTC)
+From: Lavori su Glassdoor <noreply@glassdoor.com>
+Mime-Version: 1.0
+Message-ID: <0Ow2gKqGTDiPeVAKT84Wjw@geopod-ismtpd-6-1>
+Subject: Software Developer presso Apuliasoft S.r.l. e altre 4 offerte di
+ lavoro a Bari per te. Candidati ora.
+Reply-To: Glassdoor <noreply@glassdoor.com>
+X-Feedback-ID: 361267:SG
+X-SG-EID: 
+ =?us-ascii?Q?JaUxMwRZcE1ColPo+vrolqgO3X7fs5TH1P=2F=2FNeGqhqwRNXDga8yJtws7vmSqyA?=
+ =?us-ascii?Q?=2FOdj54kYEwm0enRHiR+wp7a2=2F3vCX9d48cIfGKM?=
+ =?us-ascii?Q?e1wIbSMKqV=2FMGCD9TnzbnVAEbJ8BtSBOQYxNmQ1?=
+ =?us-ascii?Q?0+uuoG2d6GNTAPk4fkHyGhp2C5e+ArbeTvghLpM?=
+ =?us-ascii?Q?pS9weyQgeq=2F3IVat3ZLNyQzD5i0gv6ottdvIFoQ?=
+ =?us-ascii?Q?L3dK6HQDl5aOgD4h0NWNc85u6f+1QjYD4+4sOHm?=
+ =?us-ascii?Q?sOao+pHEhuerHETLJ2uTg=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8X0r=2FnAKk9OcaHWoz0RhIVwT1COfzqvBrtr1gW2tQ?=
+ =?us-ascii?Q?udHb0rcEZCuHq=2F6Xk9xTICcrjPLrH1Tgl5dL5C=2F?=
+ =?us-ascii?Q?dTf6MrIOcLZlQbON4obya8yGjoW1BMDQZrQ0UfF?=
+ =?us-ascii?Q?5V0InFgfXly2hULHhqjxHXKRDLFOxDv3k5hKisR?=
+ =?us-ascii?Q?QkqnGhGiaHas=2Fy3j4dV0L5qHUNWUnWpyz=2FY5zD3?=
+ =?us-ascii?Q?CR6F=2F8Bvqk=2FSw2=2FgoXPLnxxC+tM+wQUFbqLi8H9?=
+ =?us-ascii?Q?DASEyQkobnLcFSqB3a8sK7N0=2Fr1Ejt8r+3A4vR9?=
+ =?us-ascii?Q?kWmDSaRBKpJoWnefTM=2Fxn5JW?=
+To: pasquale.monniello00@gmail.com
+X-Entity-ID: 3VjuPFUzwNK607OE0OaELw==
+
+<!doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns=3D"http://www.w3.org/1999/xhtml">
+        <head>
+            <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3Dutf-8">
+            <meta name=3D"format-detection" content=3D"telephone=3Dno">
+            <meta name=3D"format-detection" content=3D"address=3Dno">
+            <meta name=3D"x-apple-disable-message-reformatting">
+            <link href=3D"https://fonts.googleapis.com/css?family=3DLato:40=
+0,700,900" rel=3D"stylesheet" type=3D"text/css">
+            <!--[if mso]>
+            <style type=3D"text/css">
+            body, table, td {font-family: Arial, Helvetica, sans-serif !imp=
+ortant;}
+            </style>
+            <![endif]-->
+            <style>
+                body {
+                  margin: 0;
+                }
+                .css-uegzbq{font-family:Lato,Arial,Helvetica,sans-serif;mar=
+gin:0;padding:0;font-size:18px;font-weight:normal;font-stretch:normal;font-=
+style:normal;line-height:28px;-webkit-letter-spacing:normal;-moz-letter-spa=
+cing:normal;-ms-letter-spacing:normal;letter-spacing:normal;color:#505863;}=
+.css-uegzbq,.css-uegzbq *{font-family:Lato,Arial,Helvetica,sans-serif;}.css=
+-1kbqv69{width:100%;background-color:#f5f6f7;text-align:center;}.css-l1mraf=
+{max-width:500px;width:500px;margin:0 auto;background-color:#fff;text-align=
+:left;}.css-1iuszfz{padding-top:35px;border-top:1px solid transparent;borde=
+r-left:1px solid transparent;border-right:1px solid transparent;padding-lef=
+t:24px;padding-right:24px;padding-bottom:30px;width:100%;}.css-9th5vf{color=
+:#1861bf;}a.cleanBoldLink{font-family:Arial,Helvetica,sans-serif !important=
+;font-weight:bold;-webkit-text-decoration:none;text-decoration:none;color:#=
+1861bf;}a.clearLink{color:#1861bf;-webkit-text-decoration:none;text-decorat=
+ion:none;}.css-1iz8x5j{padding-left:24px;padding-right:24px;padding-top:0px=
+;padding-bottom:10px;text-align:center;vertical-align:top;border-left:1px s=
+olid transparent;border-right:1px solid transparent;}.css-2pliid{color:#0d0=
+d0d;font-size:20px;font-weight:bold;line-height:1.3;}.css-b3vx77{font-size:=
+16px;line-height:1.3;}.css-nt1wjc{padding-left:24px;padding-right:24px;padd=
+ing-top:0px;padding-bottom:0px;border-left:1px solid transparent;border-rig=
+ht:1px solid transparent;}.css-ip60z3{height:0px;border:none;margin:0;paddi=
+ng:0;width:100%;border-top:1px solid #dee0e3;}.css-1nw9wi0 table.jobTable{m=
+in-width:100%;}.css-1nw9wi0 table.jobTable tr{min-width:100%;}.css-1mcu2mb{=
+padding-bottom:16px;padding-top:16px;line-height:20px;font-size:16px;border=
+-bottom:1px solid #dee0e3;}.css-1ckyvhk{padding-right:16px;padding-top:2px;=
+vertical-align:top;min-width:34px;width:34px;}.css-v3aq5z{width:48px;height=
+:48px;border:1px solid #dee0e3;}.css-dgh53j{color:#1861bf;-webkit-text-deco=
+ration:none;text-decoration:none;}.css-10qqdaw{font-weight:bold;color:#1861=
+bf;}.css-56kyx5{color:#505863;}.css-1af37x6{color:#0caa41;font-size:12px;}.=
+css-17mvg0y{color:#0caa41;white-space:nowrap;padding-top:4px;font-size:12px=
+;width:100%;}.css-forujw{color:#20262e;}.css-kh5y0v{font-size:12px;color:#2=
+0262e;line-height:18px;}.css-1rv4fmk{padding-left:24px;padding-right:24px;p=
+adding-top:20px;padding-bottom:20px;text-align:center;border-left:1px solid=
+ transparent;border-right:1px solid transparent;}.buttonCenterspecialdefaul=
+t{font-family:Arial,Helvetica,sans-serif !important;font-weight:bold;font-s=
+ize:15px;color:#fff !important;}.css-1puo9nm{border:1px solid transparent;b=
+order-radius:3px;border-color:transparent;font-weight:bold;font-size:16px;c=
+olor:#fff !important;cursor:pointer;display:inline-block;-webkit-user-selec=
+t:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical=
+-align:middle;-webkit-transition:color 0.2s ease-out,background-color 0.2s =
+ease-out,border-color 0.2s ease-out;transition:color 0.2s ease-out,backgrou=
+nd-color 0.2s ease-out,border-color 0.2s ease-out;font-family:Lato,Arial,He=
+lvetica,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsi=
+s;min-width:88px;-webkit-text-decoration:none;text-decoration:none;line-hei=
+ght:24px;border-style:solid;width:327px;text-align:center;mso-hide:all;colo=
+r:#fff !important;background-color:#0caa41;padding:7px 16px;font-size:15px;=
+line-height:24px;}.css-1puo9nm:focus{outline:0;}.css-1puo9nm:link,.css-1puo=
+9nm:visited{color:#fff;}@media not all and (pointer:coarse){.css-1puo9nm:ho=
+ver{background-color:#056b27;border-color:#056b27;color:#fff !important;}}.=
+css-1puo9nm[disabled]{background-color:#a4ebbc;cursor:not-allowed;}.css-3j8=
+i5w{padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:20px;=
+border-left:1px solid transparent;border-right:1px solid transparent;}.css-=
+6rqxwm{padding-left:24px;padding-right:24px;padding-top:20px;padding-bottom=
+:10px;text-align:center;border-left:1px solid transparent;border-right:1px =
+solid transparent;}.css-mqvg97{line-height:27px;font-size:18px;font-weight:=
+normal;-webkit-text-decoration:none;text-decoration:none;color:#1861bf;}.cs=
+s-5gqq3p{padding-left:0px;padding-right:0px;padding-top:40px;padding-bottom=
+:20px;border-left:1px solid transparent;border-right:1px solid transparent;=
+}.css-5yhxj3{padding-left:24px;padding-right:24px;padding-top:10px;padding-=
+bottom:0px;text-align:center;border-left:1px solid transparent;border-right=
+:1px solid transparent;}.css-scem3j{font-size:20px;font-weight:bold;color:#=
+0d0d0d;line-height:1.3;}.css-1a6rt6g{padding-left:24px;padding-right:24px;p=
+adding-top:30px;padding-bottom:0px;text-align:center;border-left:1px solid =
+transparent;border-right:1px solid transparent;}.css-n7omje{font-size:16px;=
+color:#0d0d0d;}.css-1oj56vq{-webkit-text-decoration:none;text-decoration:no=
+ne;color:#1861bf;font-size:18px;}.css-1j0xffn{padding-left:24px;padding-rig=
+ht:24px;padding-top:30px;padding-bottom:0px;border-left:1px solid transpare=
+nt;border-right:1px solid transparent;}.css-ic9wqd{padding-left:0px;padding=
+-right:0px;padding-top:0px;padding-bottom:32px;border-left:1px solid transp=
+arent;border-right:1px solid transparent;}.css-1xhhlz5{padding-left:24px;pa=
+dding-right:24px;padding-top:0px;padding-bottom:50px;text-align:center;vert=
+ical-align:top;border-left:1px solid transparent;border-right:1px solid tra=
+nsparent;}.css-1s5dqo9{padding-right:4%;}.css-96uds2{color:#1861bf;-webkit-=
+text-decoration:none;text-decoration:none;}.css-1ruxp1v{padding:20px;}.css-=
+12lv0st{padding:20px;padding-top:6px;padding-bottom:6px;border-radius:3px;m=
+in-width:100%;color:#FFFFFF;background:#1861bf;}.css-lpdpqj{padding-left:0p=
+x;padding-right:0px;padding-top:0px;padding-bottom:0px;border-left:1px soli=
+d transparent;border-right:1px solid transparent;}.css-8bz5ap{padding-left:=
+24px;padding-right:24px;padding-top:64px;padding-bottom:0px;border-left:1px=
+ solid transparent;border-right:1px solid transparent;}.css-1of8vp0{border-=
+bottom:1px solid transparent;border-left:1px solid transparent;border-right=
+:1px solid transparent;}.css-wk1xqm{padding:16px 24px;font-size:12px;backgr=
+ound:#20262e;}a.footerLink{color:#fff;-webkit-text-decoration:underline;tex=
+t-decoration:underline;white-space:nowrap;}.css-13db5os{color:#fff;line-hei=
+ght:20px;margin:0;margin-top:0;margin-bottom:0;text-align:center;}a.css-1mt=
+fgd0{color:#fff;-webkit-text-decoration:underline;text-decoration:underline=
+;white-space:nowrap;}.css-ko2iq{color:#7CB228;font-size:12px;}img.fishbowlL=
+ogoSmall{width:63px;vertical-align:text-top;}.buttonCentersecondarydefault{=
+font-family:Arial,Helvetica,sans-serif !important;font-weight:bold;font-siz=
+e:15px;color:#1861bf !important;}.css-1qccvvo{padding-left:24px;padding-rig=
+ht:24px;padding-top:16px;padding-bottom:16px;text-align:center;border-left:=
+1px solid transparent;border-right:1px solid transparent;}.css-thki16{color=
+:grey;font-size:12px;line-height:20px;}.buttonCenterprimarydefault{font-fam=
+ily:Arial,Helvetica,sans-serif !important;font-weight:bold;font-size:15px;c=
+olor:#fff !important;}.headerTitle{white-space:nowrap;}.greenPercent{color:=
+#0caa41;font-size:20px;line-height:1.5;}.redPercent{color:#d93e30;font-size=
+:20px;line-height:1.5;}.kywiSalary{font-size:48px;}a.footerLink{color:#1861=
+bf;-webkit-text-decoration:underline;text-decoration:underline;white-space:=
+nowrap;}
+            </style>
+        </head>
+        <body id=3D"GDEmail">
+            <span style=3D"display:none">EY sta assumendo</span><div id=3D"=
+GDEmailWrapper" class=3D"css-uegzbq e2c2s610"><table cellSpacing=3D"0" cell=
+Padding=3D"0" color=3D"#f5f6f7" class=3D"css-1kbqv69 e2c2s614"><tr><td><tab=
+le cellSpacing=3D"0" cellPadding=3D"0" class=3D"css-l1mraf e2c2s613"><tr><t=
+d colSpan=3D"3" style=3D"text-align:center" class=3D"css-1iuszfz e2c2s611">=
+<a class=3D"css-9th5vf ep11te10" href=3D"https://www.glassdoor.it" target=
+=3D"_blank" universal=3D"true"><img src=3D"https://www.glassdoor.com/crs/ma=
+il/logos/gdlogoHw_2x.png" alt=3D"Glassdoor" title=3D"Glassdoor" height=3D"3=
+0" width=3D"142"/></a></td></tr><tr><td colSpan=3D"3" class=3D"css-1iz8x5j =
+ep11te12"><span class=3D"css-2pliid e1slim8i11">Nuove offerte di lavoro per=
+ la posizione di Sviluppatore Di Software</span><br/><span class=3D"css-b3v=
+x77 e1slim8i12">Bari</span></td></tr><tr><td colSpan=3D"3" class=3D"css-1qc=
+cvvo ep11te12"><table cellSpacing=3D"0" cellPadding=3D"0" border=3D"0" widt=
+h=3D"100%" class=3D"css-thki16 e1slim8i6" style=3D"padding:0px"><tr><td ali=
+gn=3D"center" class=3D"css-thki16 e1slim8i6" style=3D"margin:0px"><span cla=
+ss=3D"">Cliccando su un'offerta di lavoro di seguito, accetti le <br/><a cl=
+ass=3D'clearLink' href=3D'https:&#x2F;&#x2F;www.glassdoor.it&#x2F;about&#x2=
+F;terms.htm?utm_medium=3Demail&amp;utm_source=3Djobalert&amp;utm_campaign=
+=3DjobAlertAlert&amp;utm_content=3Dja-see-saved-jobs-all'>Condizioni d'uso<=
+/a> e la <a class=3D'clearLink' href=3D'https:&#x2F;&#x2F;www.glassdoor.it&=
+#x2F;about&#x2F;privacy.htm?utm_medium=3Demail&amp;utm_source=3Djobalert&am=
+p;utm_campaign=3DjobAlertAlert&amp;utm_content=3Dja-see-saved-jobs-all'>Pol=
+itica sulla privacy</a> di Glassdoor.</span></td></tr></table></td></tr><tr=
+><td colSpan=3D"3" class=3D"css-nt1wjc ep11te12"><table cellSpacing=3D"0" c=
+ellPadding=3D"0" border=3D"0" width=3D"100%" class=3D"css-ip60z3 ep11te14" =
+style=3D"padding:0px"><tr><td class=3D"css-ip60z3 ep11te14" style=3D"margin=
+:0px"></td></tr></table></td></tr><tr><td colSpan=3D"3" class=3D"css-nt1wjc=
+ ep11te12"><table cellPadding=3D"0" cellSpacing=3D"0" height=3D"100%" width=
+=3D"100%" class=3D"css-1nw9wi0 elptbf70"><tbody><tr><td class=3D"css-1mcu2m=
+b elptbf72"><table cellSpacing=3D"0" cellPadding=3D"0" border=3D"0" width=
+=3D"100%" class=3D"jobTable"><tr><td class=3D"css-1ckyvhk elptbf73"><a href=
+=3D"https://www.glassdoor.it/partner/jobListing.htm?pos=3D101&amp;ao=3D1110=
+586&amp;s=3D255&amp;guid=3D000001828f98cf0a9142d4fbbddd82fa&amp;src=3DGD_JO=
+B_AD&amp;t=3DJA&amp;vt=3De&amp;uido=3D89C24B3C9E5582CE62C61E7031981554&amp;=
+ea=3D1&amp;cs=3D1_8f9cefce&amp;cb=3D1660266533477&amp;jobListingId=3D100803=
+7848726&amp;cpc=3D8B69257BFB62E45C&amp;jrtk=3D3-0-1ga7phkflia3g801-1ga7phkg=
+ek60u800-dcd9a6ef78390b3d--6NYlbfkN0D9LWBwtLvJJOOZ-_lRek1LnK43xi3T73sSgFV9q=
+4bxxLZ_4oUevf6RaNPLq67IfP9FNsKLvzLIPoQgKWbQOKTXpZWpqX-8sSIPwgnoUUZ5gpGt7Dfm=
+GbR-fKFdu2C7Y0nSaaCBZlggo3zPU0sv6tvT-P4bqjp8zZzy6bIj0JUAVFYI8vo3jXq_p4ZH55a=
+2prY6W4iaYBFVY_qSApF0qpDMfRzfvwPrTZICn8xbMnYdB4O6r76H1sRmpcVRhmIwFu8Oq8y1Oh=
+V6C8PDMiNUIOh4j3joBnRAWY_YoQ6ybPqVrj7oiHyQ_Dxnyy3Ig8BK25M3qxScHtKaio05HRXZI=
+B7ybNdQFPF0QiJgUtzU3vwVDRAVpc9Nu4MTPOiCeIkAanFrNyxX8fjzVtsKpTFAyOqH8tpjHVAz=
+XT9iZnDF-2Pfase9usFKxdUIFdKp-9naNXsJHxYLkNXRVvQsvJLgzD-QeU6R0RIz4CgF3aa70P8=
+U7jWMDbQxiFljBTJtVYEZdKUhkMuZq2tnPW5sVACBMw9vIr8t91oZGL8%3D&amp;ja=3D191707=
+718&amp;utm_medium=3Demail&amp;utm_source=3Djobalert&amp;utm_campaign=3Djob=
+AlertAlert&amp;utm_content=3Dja-jobpos1-1008037848726"><img class=3D"logo c=
+ss-v3aq5z elptbf74" width=3D"48" height=3D"48" src=3D"https://media.glassdo=
+or.com/sql/12800/alten-squarelogo-1452817815125.png" alt=3D"Alten" title=3D=
+"Alten"/></a><img height=3D"0" width=3D"0" src=3D"https://www.glassdoor.it/=
+brand-views?o=3Dbrandview-pixel&amp;p=3DeyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2Nj=
+AyNjY1MzMsImp0aSI6IjZhZjA4ZTljLTc0N2YtNGVlMy1iNDU3LTRlNTdmOTJhMmVhYiIsImVtc=
+GlkIjoxMjgwMCwidWlkIjoyMTcwMjY4MjQsImFkYXR0ciI6eyJqb2JfbGlzdGluZ19pZCI6IjEw=
+MDgwMzc4NDg3MjYifSwiYnZuYW1lIjoiam9iLWFsZXJ0LWVtYWlsLWpvYi1saXN0aW5nIiwidGx=
+kIjoyMywiYnZ0eXBlIjoiQlJBTkQiLCJidmNoYW4iOiJFTUFJTCJ9.XkMFuQdzhogGmUv00nzhX=
+KpLiIvqMLsCWZjkEj_x-uAYVAjojMyt7nws5LZhTsDzzOoLGfHUgwbpvLRuRyrkPA" alt=3D""=
+/><table cellPadding=3D"0" cellSpacing=3D"0" width=3D"100%" class=3D"css-17=
+mvg0y elptbf71"><tr><td valign=3D"top" align=3D"center">3.3<!-- --> <!-- --=
+>=E2=98=85</td></tr></table></td><td valign=3D"top"><a href=3D"https://www.=
+glassdoor.it/partner/jobListing.htm?pos=3D101&amp;ao=3D1110586&amp;s=3D255&=
+amp;guid=3D000001828f98cf0a9142d4fbbddd82fa&amp;src=3DGD_JOB_AD&amp;t=3DJA&=
+amp;vt=3De&amp;uido=3D89C24B3C9E5582CE62C61E7031981554&amp;ea=3D1&amp;cs=3D=
+1_8f9cefce&amp;cb=3D1660266533477&amp;jobListingId=3D1008037848726&amp;cpc=
+=3D8B69257BFB62E45C&amp;jrtk=3D3-0-1ga7phkflia3g801-1ga7phkgek60u800-dcd9a6=
+ef78390b3d--6NYlbfkN0D9LWBwtLvJJOOZ-_lRek1LnK43xi3T73sSgFV9q4bxxLZ_4oUevf6R=
+aNPLq67IfP9FNsKLvzLIPoQgKWbQOKTXpZWpqX-8sSIPwgnoUUZ5gpGt7DfmGbR-fKFdu2C7Y0n=
+SaaCBZlggo3zPU0sv6tvT-P4bqjp8zZzy6bIj0JUAVFYI8vo3jXq_p4ZH55a2prY6W4iaYBFVY_=
+qSApF0qpDMfRzfvwPrTZICn8xbMnYdB4O6r76H1sRmpcVRhmIwFu8Oq8y1OhV6C8PDMiNUIOh4j=
+3joBnRAWY_YoQ6ybPqVrj7oiHyQ_Dxnyy3Ig8BK25M3qxScHtKaio05HRXZIB7ybNdQFPF0QiJg=
+UtzU3vwVDRAVpc9Nu4MTPOiCeIkAanFrNyxX8fjzVtsKpTFAyOqH8tpjHVAzXT9iZnDF-2Pfase=
+9usFKxdUIFdKp-9naNXsJHxYLkNXRVvQsvJLgzD-QeU6R0RIz4CgF3aa70P8U7jWMDbQxiFljBT=
+JtVYEZdKUhkMuZq2tnPW5sVACBMw9vIr8t91oZGL8%3D&amp;ja=3D191707718&amp;utm_med=
+ium=3Demail&amp;utm_source=3Djobalert&amp;utm_campaign=3DjobAlertAlert&amp;=
+utm_content=3Dja-jobpos1-1008037848726" class=3D"css-dgh53j elptbf76"><tabl=
+e cellSpacing=3D"0" cellPadding=3D"0" border=3D"0" width=3D"100%" class=3D"=
+css-10qqdaw elptbf77" style=3D"padding:0px"><tr><td class=3D"css-10qqdaw el=
+ptbf77" style=3D"margin:0px">Angular Developer (full remote) - IT</td></tr>=
+</table><span class=3D"css-forujw elptbf78">Alten<!-- -->=C2=A0-=C2=A0</spa=
+n><span class=3D"css-56kyx5 elptbf79">Italia</span><table cellSpacing=3D"0"=
+ cellPadding=3D"0" border=3D"0" width=3D"100%" class=3D"css-1af37x6 elptbf7=
+10" style=3D"padding:0px"><tr><td class=3D"css-1af37x6 elptbf710" style=3D"=
+margin:0px"></td></tr></table><table cellSpacing=3D"0" cellPadding=3D"0" bo=
+rder=3D"0" width=3D"100%" class=3D"css-ko2iq elptbf711" style=3D"padding:0p=
+x"><tr><td class=3D"css-ko2iq elptbf711" style=3D"margin:0px">Candidatura r=
+apida</td></tr></table></a></td></tr></table></td></tr><tr><td class=3D"css=
+-1mcu2mb elptbf72"><table cellSpacing=3D"0" cellPadding=3D"0" border=3D"0" =
+width=3D"100%" class=3D"jobTable"><tr><td class=3D"css-1ckyvhk elptbf73"><a=
+ href=3D"https://www.glassdoor.it/partner/jobListing.htm?pos=3D102&amp;ao=
+=3D1110586&amp;s=3D255&amp;guid=3D000001828f98cf0a9142d4fbbddd82fa&amp;src=
+=3DGD_JOB_AD&amp;t=3DJA&amp;vt=3De&amp;uido=3D89C24B3C9E5582CE62C61E7031981=
+554&amp;cs=3D1_b7926032&amp;cb=3D1660266533476&amp;jobListingId=3D100803574=
+4444&amp;cpc=3D6FC5BA77C9A4CD78&amp;jrtk=3D3-0-1ga7phkflia3g801-1ga7phkgek6=
+0u800-5f2e4f5d71258b8e--6NYlbfkN0DBkioJ74HNRv1kkbLI_dqC2yEDIKgJL0nBFSYaLvAa=
+BKZdwsjGyz84gUGVgPPKCPq9fFS-2smaqKpVfkC0_S0Hzpm36qExVrMo1x3k4wpFzYY2vpqJao_=
+5Dzv7a1y67UT9QO5527BfVbs_IFfV4FpALGAUg0Vpwwxy1bHfCYB18By3-oghp7QG3WwyrqzDFo=
+BHNW33FjgfvmOEKguKEAIEwlrEUIxTRx2WT30_4HiCFNIx9zU5DKO07Dsl_FMAaW3h58B_V5bbr=
+mB0BiJAuev_cnSlKm8M_Co5pPcmcMryqLjnU1WHKWWyFIWMr1kJpn5AjQN5_d9V9q7j6VK6dnXd=
+jM3rOZWwvgOCNR3cFXEPGhzRf7Ba4i3X8M27RbPMryrHhvPnqTeFVtMdSq6-1zF3HtdyMmTyJbj=
+PDQYuJ2ozodBwWuetIOfttre3BWYZq5J6fW77PucDMHvxjhCLlpwkXSjFpgGZPC4b3_yDZuagvS=
+blNWBoOImKpkketlWJDIiNgDtQ2Alq6Q%3D%3D&amp;ja=3D191707718&amp;utm_medium=3D=
+email&amp;utm_source=3Djobalert&amp;utm_campaign=3DjobAlertAlert&amp;utm_co=
+ntent=3Dja-jobpos2-1008035744444"><img class=3D"logo css-v3aq5z elptbf74" w=
+idth=3D"48" height=3D"48" src=3D"https://media.glassdoor.com/sql/1617479/um=
+ana-squarelogo-1515655774147.png" alt=3D"Umana spa" title=3D"Umana spa"/></=
+a><img height=3D"0" width=3D"0" src=3D"https://www.glassdoor.it/brand-views=
+?o=3Dbrandview-pixel&amp;p=3DeyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NjAyNjY1MzMsI=
+mp0aSI6IjQ1YTNmYzBkLTdlNzItNGUwZS04NWQwLTY0NGNmYzgzMTU2NyIsImVtcGlkIjoxNjE3=
+NDc5LCJ1aWQiOjIxNzAyNjgyNCwiYWRhdHRyIjp7ImpvYl9saXN0aW5nX2lkIjoiMTAwODAzNTc=
+0NDQ0NCJ9LCJidm5hbWUiOiJqb2ItYWxlcnQtZW1haWwtam9iLWxpc3RpbmciLCJ0bGQiOjIzLC=
+JidnR5cGUiOiJCUkFORCIsImJ2Y2hhbiI6IkVNQUlMIn0.KqkD5YlWj7zr5M5H7EPHriEikyOP5=
+HHieX-heRbu41M4Ayt6SR5_i-1_Uiiab3csLkfJXScDmUobc4JZsmHB0Q" alt=3D""/><table=
+ cellPadding=3D"0" cellSpacing=3D"0" width=3D"100%" class=3D"css-17mvg0y el=
+ptbf71"><tr><td valign=3D"top" align=3D"center">3.7<!-- --> <!-- -->=E2=98=
+=85</td></tr></table></td><td valign=3D"top"><a href=3D"https://www.glassdo=
+or.it/partner/jobListing.htm?pos=3D102&amp;ao=3D1110586&amp;s=3D255&amp;gui=
+d=3D000001828f98cf0a9142d4fbbddd82fa&amp;src=3DGD_JOB_AD&amp;t=3DJA&amp;vt=
+=3De&amp;uido=3D89C24B3C9E5582CE62C61E7031981554&amp;cs=3D1_b7926032&amp;cb=
+=3D1660266533476&amp;jobListingId=3D1008035744444&amp;cpc=3D6FC5BA77C9A4CD7=
+8&amp;jrtk=3D3-0-1ga7phkflia3g801-1ga7phkgek60u800-5f2e4f5d71258b8e--6NYlbf=
+kN0DBkioJ74HNRv1kkbLI_dqC2yEDIKgJL0nBFSYaLvAaBKZdwsjGyz84gUGVgPPKCPq9fFS-2s=
+maqKpVfkC0_S0Hzpm36qExVrMo1x3k4wpFzYY2vpqJao_5Dzv7a1y67UT9QO5527BfVbs_IFfV4=
+FpALGAUg0Vpwwxy1bHfCYB18By3-oghp7QG3WwyrqzDFoBHNW33FjgfvmOEKguKEAIEwlrEUIxT=
+Rx2WT30_4HiCFNIx9zU5DKO07Dsl_FMAaW3h58B_V5bbrmB0BiJAuev_cnSlKm8M_Co5pPcmcMr=
+yqLjnU1WHKWWyFIWMr1kJpn5AjQN5_d9V9q7j6VK6dnXdjM3rOZWwvgOCNR3cFXEPGhzRf7Ba4i=
+3X8M27RbPMryrHhvPnqTeFVtMdSq6-1zF3HtdyMmTyJbjPDQYuJ2ozodBwWuetIOfttre3BWYZq=
+5J6fW77PucDMHvxjhCLlpwkXSjFpgGZPC4b3_yDZuagvSblNWBoOImKpkketlWJDIiNgDtQ2Alq=
+6Q%3D%3D&amp;ja=3D191707718&amp;utm_medium=3Demail&amp;utm_source=3Djobaler=
+t&amp;utm_campaign=3DjobAlertAlert&amp;utm_content=3Dja-jobpos2-10080357444=
+44" class=3D"css-dgh53j elptbf76"><table cellSpacing=3D"0" cellPadding=3D"0=
+" border=3D"0" width=3D"100%" class=3D"css-10qqdaw elptbf77" style=3D"paddi=
+ng:0px"><tr><td class=3D"css-10qqdaw elptbf77" style=3D"margin:0px">Periti =
+informatici</td></tr></table><span class=3D"css-forujw elptbf78">Umana spa<=
+!-- -->=C2=A0-=C2=A0</span><span class=3D"css-56kyx5 elptbf79">Bari</span><=
+table cellSpacing=3D"0" cellPadding=3D"0" border=3D"0" width=3D"100%" class=
+=3D"css-1af37x6 elptbf710" style=3D"padding:0px"><tr><td class=3D"css-1af37=
+x6 elptbf710" style=3D"margin:0px"></td></tr></table></a></td></tr></table>=
+</td></tr><tr><td class=3D"css-1mcu2mb elptbf72"><table cellSpacing=3D"0" c=
+ellPadding=3D"0" border=3D"0" width=3D"100%" class=3D"jobTable"><tr><td cla=
+ss=3D"css-1ckyvhk elptbf73"><a href=3D"https://www.glassdoor.it/partner/job=
+Listing.htm?pos=3D103&amp;ao=3D1136043&amp;s=3D255&amp;guid=3D000001828f98c=
+f0a9142d4fbbddd82fa&amp;src=3DGD_JOB_AD&amp;t=3DJA&amp;vt=3De&amp;uido=3D89=
+C24B3C9E5582CE62C61E7031981554&amp;ea=3D1&amp;cs=3D1_4ba427e2&amp;cb=3D1660=
+266533477&amp;jobListingId=3D1008034927181&amp;jrtk=3D3-0-1ga7phkflia3g801-=
+1ga7phkgek60u800-0b22a194eff2fd16-&amp;ja=3D191707718&amp;utm_medium=3Demai=
+l&amp;utm_source=3Djobalert&amp;utm_campaign=3DjobAlertAlert&amp;utm_conten=
+t=3Dja-jobpos3-1008034927181"><img class=3D"logo css-v3aq5z elptbf74" width=
+=3D"48" height=3D"48" src=3D"http://www.glassdoor.com/crs/mail/icons/buildi=
+ng_60x60.png" alt=3D"Apuliasoft S.r.l." title=3D"Apuliasoft S.r.l."/></a></=
+td><td valign=3D"top"><a href=3D"https://www.glassdoor.it/partner/jobListin=
+g.htm?pos=3D103&amp;ao=3D1136043&amp;s=3D255&amp;guid=3D000001828f98cf0a914=
+2d4fbbddd82fa&amp;src=3DGD_JOB_AD&amp;t=3DJA&amp;vt=3De&amp;uido=3D89C24B3C=
+9E5582CE62C61E7031981554&amp;ea=3D1&amp;cs=3D1_4ba427e2&amp;cb=3D1660266533=
+477&amp;jobListingId=3D1008034927181&amp;jrtk=3D3-0-1ga7phkflia3g801-1ga7ph=
+kgek60u800-0b22a194eff2fd16-&amp;ja=3D191707718&amp;utm_medium=3Demail&amp;=
+utm_source=3Djobalert&amp;utm_campaign=3DjobAlertAlert&amp;utm_content=3Dja=
+-jobpos3-1008034927181" class=3D"css-dgh53j elptbf76"><table cellSpacing=3D=
+"0" cellPadding=3D"0" border=3D"0" width=3D"100%" class=3D"css-10qqdaw elpt=
+bf77" style=3D"padding:0px"><tr><td class=3D"css-10qqdaw elptbf77" style=3D=
+"margin:0px">Software Developer</td></tr></table><span class=3D"css-forujw =
+elptbf78">Apuliasoft S.r.l.<!-- -->=C2=A0-=C2=A0</span><span class=3D"css-5=
+6kyx5 elptbf79">Bari</span><table cellSpacing=3D"0" cellPadding=3D"0" borde=
+r=3D"0" width=3D"100%" class=3D"css-1af37x6 elptbf710" style=3D"padding:0px=
+"><tr><td class=3D"css-1af37x6 elptbf710" style=3D"margin:0px"></td></tr></=
+table><table cellSpacing=3D"0" cellPadding=3D"0" border=3D"0" width=3D"100%=
+" class=3D"css-ko2iq elptbf711" style=3D"padding:0px"><tr><td class=3D"css-=
+ko2iq elptbf711" style=3D"margin:0px">Candidatura rapida</td></tr></table><=
+/a></td></tr></table></td></tr><tr><td class=3D"css-1mcu2mb elptbf72"><tabl=
+e cellSpacing=3D"0" cellPadding=3D"0" border=3D"0" width=3D"100%" class=3D"=
+jobTable"><tr><td class=3D"css-1ckyvhk elptbf73"><a href=3D"https://www.gla=
+ssdoor.it/partner/jobListing.htm?pos=3D104&amp;ao=3D1136043&amp;s=3D255&amp=
+;guid=3D000001828f98cf0a9142d4fbbddd82fa&amp;src=3DGD_JOB_AD&amp;t=3DJA&amp=
+;vt=3De&amp;uido=3D89C24B3C9E5582CE62C61E7031981554&amp;ea=3D1&amp;cs=3D1_3=
+dc61129&amp;cb=3D1660266533477&amp;jobListingId=3D1008043109588&amp;jrtk=3D=
+3-0-1ga7phkflia3g801-1ga7phkgek60u800-14c3948fc1384761-&amp;ja=3D191707718&=
+amp;utm_medium=3Demail&amp;utm_source=3Djobalert&amp;utm_campaign=3DjobAler=
+tAlert&amp;utm_content=3Dja-jobpos4-1008043109588"><img class=3D"logo css-v=
+3aq5z elptbf74" width=3D"48" height=3D"48" src=3D"https://media.glassdoor.c=
+om/sql/2860151/dyrecta-lab-squarelogo-1567065939189.png" alt=3D"Dyrecta Lab=
+ srl" title=3D"Dyrecta Lab srl"/></a><img height=3D"0" width=3D"0" src=3D"h=
+ttps://www.glassdoor.it/brand-views?o=3Dbrandview-pixel&amp;p=3DeyJhbGciOiJ=
+IUzUxMiJ9.eyJpYXQiOjE2NjAyNjY1MzMsImp0aSI6IjRmZGQ5NzQyLWI3ODUtNGQwYy05YzFiL=
+Tc1MGNiYzNlYzAxNSIsImVtcGlkIjoyODYwMTUxLCJ1aWQiOjIxNzAyNjgyNCwiYWRhdHRyIjp7=
+ImpvYl9saXN0aW5nX2lkIjoiMTAwODA0MzEwOTU4OCJ9LCJidm5hbWUiOiJqb2ItYWxlcnQtZW1=
+haWwtam9iLWxpc3RpbmciLCJ0bGQiOjIzLCJidnR5cGUiOiJCUkFORCIsImJ2Y2hhbiI6IkVNQU=
+lMIn0.g5i8A0kyPccdQiAFxM6ICdYOj1w-NSjvh5GtPVupbWn2DCxX5lUZQWSeJLPwICtsyUKtz=
+TjCNLHxSAKhXtaBqQ" alt=3D""/><table cellPadding=3D"0" cellSpacing=3D"0" wid=
+th=3D"100%" class=3D"css-17mvg0y elptbf71"><tr><td valign=3D"top" align=3D"=
+center">2.7<!-- --> <!-- -->=E2=98=85</td></tr></table></td><td valign=3D"t=
+op"><a href=3D"https://www.glassdoor.it/partner/jobListing.htm?pos=3D104&am=
+p;ao=3D1136043&amp;s=3D255&amp;guid=3D000001828f98cf0a9142d4fbbddd82fa&amp;=
+src=3DGD_JOB_AD&amp;t=3DJA&amp;vt=3De&amp;uido=3D89C24B3C9E5582CE62C61E7031=
+981554&amp;ea=3D1&amp;cs=3D1_3dc61129&amp;cb=3D1660266533477&amp;jobListing=
+Id=3D1008043109588&amp;jrtk=3D3-0-1ga7phkflia3g801-1ga7phkgek60u800-14c3948=
+fc1384761-&amp;ja=3D191707718&amp;utm_medium=3Demail&amp;utm_source=3Djobal=
+ert&amp;utm_campaign=3DjobAlertAlert&amp;utm_content=3Dja-jobpos4-100804310=
+9588" class=3D"css-dgh53j elptbf76"><table cellSpacing=3D"0" cellPadding=3D=
+"0" border=3D"0" width=3D"100%" class=3D"css-10qqdaw elptbf77" style=3D"pad=
+ding:0px"><tr><td class=3D"css-10qqdaw elptbf77" style=3D"margin:0px">Softw=
+are Developer</td></tr></table><span class=3D"css-forujw elptbf78">Dyrecta =
+Lab srl<!-- -->=C2=A0-=C2=A0</span><span class=3D"css-56kyx5 elptbf79">Conv=
+ersano</span><table cellSpacing=3D"0" cellPadding=3D"0" border=3D"0" width=
+=3D"100%" class=3D"css-1af37x6 elptbf710" style=3D"padding:0px"><tr><td cla=
+ss=3D"css-1af37x6 elptbf710" style=3D"margin:0px"></td></tr></table><table =
+cellSpacing=3D"0" cellPadding=3D"0" border=3D"0" width=3D"100%" class=3D"cs=
+s-ko2iq elptbf711" style=3D"padding:0px"><tr><td class=3D"css-ko2iq elptbf7=
+11" style=3D"margin:0px">Candidatura rapida</td></tr></table></a></td></tr>=
+</table></td></tr><tr><td class=3D"css-1mcu2mb elptbf72"><table cellSpacing=
+=3D"0" cellPadding=3D"0" border=3D"0" width=3D"100%" class=3D"jobTable"><tr=
+><td class=3D"css-1ckyvhk elptbf73"><a href=3D"https://www.glassdoor.it/par=
+tner/jobListing.htm?pos=3D105&amp;ao=3D1136043&amp;s=3D255&amp;guid=3D00000=
+1828f98cf0a9142d4fbbddd82fa&amp;src=3DGD_JOB_AD&amp;t=3DJA&amp;vt=3De&amp;u=
+ido=3D89C24B3C9E5582CE62C61E7031981554&amp;cs=3D1_8e15c638&amp;cb=3D1660266=
+533477&amp;jobListingId=3D1008052684946&amp;jrtk=3D3-0-1ga7phkflia3g801-1ga=
+7phkgek60u800-603d18cbbf030b55-&amp;ja=3D191707718&amp;utm_medium=3Demail&a=
+mp;utm_source=3Djobalert&amp;utm_campaign=3DjobAlertAlert&amp;utm_content=
+=3Dja-jobpos5-1008052684946"><img class=3D"logo css-v3aq5z elptbf74" width=
+=3D"48" height=3D"48" src=3D"https://media.glassdoor.com/sql/152846/akka-te=
+chnologies-squarelogo-1526285120342.png" alt=3D"AKKA TECHNOLOGIES" title=3D=
+"AKKA TECHNOLOGIES"/></a><img height=3D"0" width=3D"0" src=3D"https://www.g=
+lassdoor.it/brand-views?o=3Dbrandview-pixel&amp;p=3DeyJhbGciOiJIUzUxMiJ9.ey=
+JpYXQiOjE2NjAyNjY1MzMsImp0aSI6IjI1ZTRhNzk2LTJlYjMtNGE4ZS1iZjM4LWE4ODA2ZDEzY=
+WZiYiIsImVtcGlkIjoxNTI4NDYsInVpZCI6MjE3MDI2ODI0LCJhZGF0dHIiOnsiam9iX2xpc3Rp=
+bmdfaWQiOiIxMDA4MDUyNjg0OTQ2In0sImJ2bmFtZSI6ImpvYi1hbGVydC1lbWFpbC1qb2ItbGl=
+zdGluZyIsInRsZCI6MjMsImJ2dHlwZSI6IkJSQU5EIiwiYnZjaGFuIjoiRU1BSUwifQ.DUid7TN=
+4HgouwuiLikNSIpDvgR9fsBNpgl_VvbyGht-XU6DADZuonRe_PHtY1vy5Sam91YTiAT4OzzhIFC=
+9qQA" alt=3D""/><table cellPadding=3D"0" cellSpacing=3D"0" width=3D"100%" c=
+lass=3D"css-17mvg0y elptbf71"><tr><td valign=3D"top" align=3D"center">3.1<!=
+-- --> <!-- -->=E2=98=85</td></tr></table></td><td valign=3D"top"><a href=
+=3D"https://www.glassdoor.it/partner/jobListing.htm?pos=3D105&amp;ao=3D1136=
+043&amp;s=3D255&amp;guid=3D000001828f98cf0a9142d4fbbddd82fa&amp;src=3DGD_JO=
+B_AD&amp;t=3DJA&amp;vt=3De&amp;uido=3D89C24B3C9E5582CE62C61E7031981554&amp;=
+cs=3D1_8e15c638&amp;cb=3D1660266533477&amp;jobListingId=3D1008052684946&amp=
+;jrtk=3D3-0-1ga7phkflia3g801-1ga7phkgek60u800-603d18cbbf030b55-&amp;ja=3D19=
+1707718&amp;utm_medium=3Demail&amp;utm_source=3Djobalert&amp;utm_campaign=
+=3DjobAlertAlert&amp;utm_content=3Dja-jobpos5-1008052684946" class=3D"css-d=
+gh53j elptbf76"><table cellSpacing=3D"0" cellPadding=3D"0" border=3D"0" wid=
+th=3D"100%" class=3D"css-10qqdaw elptbf77" style=3D"padding:0px"><tr><td cl=
+ass=3D"css-10qqdaw elptbf77" style=3D"margin:0px">Full Stack Developer .Net=
+</td></tr></table><span class=3D"css-forujw elptbf78">AKKA TECHNOLOGIES<!--=
+ -->=C2=A0-=C2=A0</span><span class=3D"css-56kyx5 elptbf79">Puglia</span><t=
+able cellSpacing=3D"0" cellPadding=3D"0" border=3D"0" width=3D"100%" class=
+=3D"css-1af37x6 elptbf710" style=3D"padding:0px"><tr><td class=3D"css-1af37=
+x6 elptbf710" style=3D"margin:0px"></td></tr></table></a></td></tr></table>=
+</td></tr><tr><td class=3D"css-1mcu2mb elptbf72"><table cellSpacing=3D"0" c=
+ellPadding=3D"0" border=3D"0" width=3D"100%" class=3D"jobTable"><tr><td cla=
+ss=3D"css-1ckyvhk elptbf73"><a href=3D"https://www.glassdoor.it/partner/job=
+Listing.htm?pos=3D106&amp;ao=3D1136043&amp;s=3D255&amp;guid=3D000001828f98c=
+f0a9142d4fbbddd82fa&amp;src=3DGD_JOB_AD&amp;t=3DJA&amp;vt=3De&amp;uido=3D89=
+C24B3C9E5582CE62C61E7031981554&amp;cs=3D1_2322302d&amp;cb=3D1660266533477&a=
+mp;jobListingId=3D1008034416824&amp;jrtk=3D3-0-1ga7phkflia3g801-1ga7phkgek6=
+0u800-c2e969ad7421f5e0-&amp;ja=3D191707718&amp;utm_medium=3Demail&amp;utm_s=
+ource=3Djobalert&amp;utm_campaign=3DjobAlertAlert&amp;utm_content=3Dja-jobp=
+os6-1008034416824"><img class=3D"logo css-v3aq5z elptbf74" width=3D"48" hei=
+ght=3D"48" src=3D"https://media.glassdoor.com/sql/2784/ey-squareLogo-165461=
+7924366.png" alt=3D"EY" title=3D"EY"/></a><img height=3D"0" width=3D"0" src=
+=3D"https://www.glassdoor.it/brand-views?o=3Dbrandview-pixel&amp;p=3DeyJhbG=
+ciOiJIUzUxMiJ9.eyJpYXQiOjE2NjAyNjY1MzMsImp0aSI6ImI5OWY2MjVjLWRjMzAtNGQ5Ni1h=
+ZDcwLTc4YzdmODQ0MTE5ZiIsImVtcGlkIjoyNzg0LCJ1aWQiOjIxNzAyNjgyNCwiYWRhdHRyIjp=
+7ImpvYl9saXN0aW5nX2lkIjoiMTAwODAzNDQxNjgyNCJ9LCJidm5hbWUiOiJqb2ItYWxlcnQtZW=
+1haWwtam9iLWxpc3RpbmciLCJ0bGQiOjIzLCJidnR5cGUiOiJCUkFORCIsImJ2Y2hhbiI6IkVNQ=
+UlMIn0.J18C5cEZOuEPNXRY2Lpm4cr5tPT3xtgahE-vT8_8OwPA0FKhbrtBsbjNeLljaF21pVAK=
+rNq2AvXT7dDVeKncmg" alt=3D""/><table cellPadding=3D"0" cellSpacing=3D"0" wi=
+dth=3D"100%" class=3D"css-17mvg0y elptbf71"><tr><td valign=3D"top" align=3D=
+"center">3.9<!-- --> <!-- -->=E2=98=85</td></tr></table></td><td valign=3D"=
+top"><a href=3D"https://www.glassdoor.it/partner/jobListing.htm?pos=3D106&a=
+mp;ao=3D1136043&amp;s=3D255&amp;guid=3D000001828f98cf0a9142d4fbbddd82fa&amp=
+;src=3DGD_JOB_AD&amp;t=3DJA&amp;vt=3De&amp;uido=3D89C24B3C9E5582CE62C61E703=
+1981554&amp;cs=3D1_2322302d&amp;cb=3D1660266533477&amp;jobListingId=3D10080=
+34416824&amp;jrtk=3D3-0-1ga7phkflia3g801-1ga7phkgek60u800-c2e969ad7421f5e0-=
+&amp;ja=3D191707718&amp;utm_medium=3Demail&amp;utm_source=3Djobalert&amp;ut=
+m_campaign=3DjobAlertAlert&amp;utm_content=3Dja-jobpos6-1008034416824" clas=
+s=3D"css-dgh53j elptbf76"><table cellSpacing=3D"0" cellPadding=3D"0" border=
+=3D"0" width=3D"100%" class=3D"css-10qqdaw elptbf77" style=3D"padding:0px">=
+<tr><td class=3D"css-10qqdaw elptbf77" style=3D"margin:0px">Senior Full Sta=
+ck C# .NET Developer - Financial Services</td></tr></table><span class=3D"c=
+ss-forujw elptbf78">EY<!-- -->=C2=A0-=C2=A0</span><span class=3D"css-56kyx5=
+ elptbf79">Bari</span><table cellSpacing=3D"0" cellPadding=3D"0" border=3D"=
+0" width=3D"100%" class=3D"css-1af37x6 elptbf710" style=3D"padding:0px"><tr=
+><td class=3D"css-1af37x6 elptbf710" style=3D"margin:0px"></td></tr></table=
+></a><div class=3D"css-kh5y0v elptbf712">Con valutazione alta<!-- -->:=C2=
+=A0<!-- -->Opportunit=C3=A0 di carriera</div></td></tr></table></td></tr></=
+tbody></table></td></tr><tr><td colSpan=3D"3" class=3D"css-1rv4fmk ep11te12=
+"><div><!--[if mso]>
+                    <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" =
+xmlns:w=3D"urn:schemas-microsoft-com:office:word" style=3D"height:40px;v-te=
+xt-anchor:middle;width:327px;" href=3D"https://www.glassdoor.it/Lavoro/bari=
+-sviluppatore-di-software-lavori-SRCH_IL.0,4_IC2835879_KO5,29_SAJR.htm?ja=
+=3D191707718&uvk=3DPgyhopn:d5mn85WiPkyUi6kyClcg&utm_medium=3Demail&utm_sour=
+ce=3Djobalert&utm_campaign=3DjobAlertAlert&utm_content=3Dja-alljobs-JACTABO=
+TTOM" arcsize=3D"7%" fillcolor=3D"#0caa41" strokecolor=3D"undefined">
+                    <w:anchorlock/>
+                    <center class=3D"buttonCenterspecialdefault">
+                    <div style=3D"display: none;"></div>Vedi tutti i lavori=
+<div style=3D"display:none"></div>
+                        </center>
+                    </v:roundrect>
+                    <![endif]--></div><a href=3D"https://www.glassdoor.it/L=
+avoro/bari-sviluppatore-di-software-lavori-SRCH_IL.0,4_IC2835879_KO5,29_SAJ=
+R.htm?ja=3D191707718&amp;uvk=3DPgyhopn:d5mn85WiPkyUi6kyClcg&amp;utm_medium=
+=3Demail&amp;utm_source=3Djobalert&amp;utm_campaign=3DjobAlertAlert&amp;utm=
+_content=3Dja-alljobs-JACTABOTTOM" target=3D"_blank" class=3D"css-1puo9nm e=
+p11te11">Vedi tutti i lavori</a></td></tr><tr><td colSpan=3D"3" class=3D"cs=
+s-3j8i5w ep11te12"><table cellSpacing=3D"0" cellPadding=3D"0" border=3D"0" =
+width=3D"100%" class=3D"css-ip60z3 ep11te14" style=3D"padding:0px"><tr><td =
+class=3D"css-ip60z3 ep11te14" style=3D"margin:0px"></td></tr></table></td><=
+/tr><tr><td colSpan=3D"3" class=3D"css-1iz8x5j ep11te12"><span class=3D"css=
+-2pliid e1slim8i11">Crea avvisi di lavoro correlati a Bari in un clic</span=
+></td></tr><tr><td colSpan=3D"3" class=3D"css-6rqxwm ep11te12"><a class=3D"=
+css-mqvg97 e1slim8i16" href=3D"https://www.glassdoor.it/job-alert/jobAlertA=
+jax.htm?loc=3DBari&amp;userValidationKey=3DPgyhopn:d5mn85WiPkyUi6kyClcg&amp=
+;keywords=3Dsviluppatore labview&amp;JAK=3DKA98XUDzsETQBCFm4Njz6A:yzBCCdvGH=
+rsJQ2b9n4qqhiB7EPkvUF2JPxLE8EdVM8eWDwxh-yaHPIR7BVl-_RjO:MFanyAqSOl4RAHMttl8=
+sDN63NxmfCLlUsBjvd3OBNBY&amp;source=3DRELATED_EMAIL_JOB_ALERT&amp;key=3Dmci=
+kAbc:6wsTJXj5EvLtYjs0wKA81g&amp;oneClick=3Dtrue&amp;utm_medium=3Demail&amp;=
+utm_source=3Djobalert&amp;utm_campaign=3DjobAlertAlert&amp;utm_content=3Dja=
+-related-jobs-1" target=3D"_blank" universal=3D"true">+ <!-- -->sviluppator=
+e labview</a></td></tr><tr><td colSpan=3D"3" class=3D"css-6rqxwm ep11te12">=
+<a class=3D"css-mqvg97 e1slim8i16" href=3D"https://www.glassdoor.it/job-ale=
+rt/jobAlertAjax.htm?loc=3DBari&amp;userValidationKey=3DPgyhopn:d5mn85WiPkyU=
+i6kyClcg&amp;keywords=3Dsviluppatore software associato&amp;JAK=3DKA98XUDzs=
+ETQBCFm4Njz6A:yzBCCdvGHrsJQ2b9n4qqhiB7EPkvUF2JPxLE8EdVM8eWDwxh-yaHPIR7BVl-_=
+RjO:MFanyAqSOl4RAHMttl8sDN63NxmfCLlUsBjvd3OBNBY&amp;source=3DRELATED_EMAIL_=
+JOB_ALERT&amp;key=3DmcikAbc:6wsTJXj5EvLtYjs0wKA81g&amp;oneClick=3Dtrue&amp;=
+utm_medium=3Demail&amp;utm_source=3Djobalert&amp;utm_campaign=3DjobAlertAle=
+rt&amp;utm_content=3Dja-related-jobs-2" target=3D"_blank" universal=3D"true=
+">+ <!-- -->sviluppatore software associato</a></td></tr><tr><td colSpan=3D=
+"3" class=3D"css-5gqq3p ep11te12"><table cellSpacing=3D"0" cellPadding=3D"0=
+" border=3D"0" width=3D"100%" class=3D"css-ip60z3 ep11te14" style=3D"paddin=
+g:0px"><tr><td class=3D"css-ip60z3 ep11te14" style=3D"margin:0px"></td></tr=
+></table></td></tr><tr><td colSpan=3D"3" class=3D"css-5yhxj3 ep11te12"><spa=
+n class=3D"css-scem3j e1slim8i20">Impostazioni email </span></td></tr><tr><=
+td colSpan=3D"3" class=3D"css-1a6rt6g ep11te12"><span class=3D"css-n7omje e=
+1slim8i18">Sviluppatore Di Software</span><br/><a class=3D"css-1oj56vq e1sl=
+im8i17" href=3D"https://www.glassdoor.it/profile/editJobAlert_input.htm?JAK=
+=3DKA98XUDzsETQBCFm4Njz6A:yzBCCdvGHrsJQ2b9n4qqhiB7EPkvUF2JPxLE8EdVM8eWDwxh-=
+yaHPIR7BVl-_RjO:MFanyAqSOl4RAHMttl8sDN63NxmfCLlUsBjvd3OBNBY&amp;key=3DmcikA=
+bc:6wsTJXj5EvLtYjs0wKA81g&amp;utm_medium=3Demail&amp;utm_source=3Djobalert&=
+amp;utm_campaign=3DjobAlertAlert&amp;utm_content=3Dja-editalert-key" target=
+=3D"_blank" universal=3D"true">Modifica le parole chiave</a></td></tr><tr><=
+td colSpan=3D"3" class=3D"css-1a6rt6g ep11te12"><span class=3D"css-n7omje e=
+1slim8i18">Bari</span><br/><a class=3D"css-1oj56vq e1slim8i17" href=3D"http=
+s://www.glassdoor.it/profile/editJobAlert_input.htm?JAK=3DKA98XUDzsETQBCFm4=
+Njz6A:yzBCCdvGHrsJQ2b9n4qqhiB7EPkvUF2JPxLE8EdVM8eWDwxh-yaHPIR7BVl-_RjO:MFan=
+yAqSOl4RAHMttl8sDN63NxmfCLlUsBjvd3OBNBY&amp;key=3DmcikAbc:6wsTJXj5EvLtYjs0w=
+KA81g&amp;utm_medium=3Demail&amp;utm_source=3Djobalert&amp;utm_campaign=3Dj=
+obAlertAlert&amp;utm_content=3Dja-editalert-key" target=3D"_blank" universa=
+l=3D"true">Modifica localit=C3=A0</a></td></tr><tr><td colSpan=3D"3" class=
+=3D"css-1a6rt6g ep11te12"><span class=3D"css-n7omje e1slim8i18">Invio giorn=
+aliero</span><br/><a class=3D"css-1oj56vq e1slim8i17" href=3D"https://www.g=
+lassdoor.it/profile/editJobAlert_input.htm?freq=3D7&amp;JAK=3DKA98XUDzsETQB=
+CFm4Njz6A:yzBCCdvGHrsJQ2b9n4qqhiB7EPkvUF2JPxLE8EdVM8eWDwxh-yaHPIR7BVl-_RjO:=
+MFanyAqSOl4RAHMttl8sDN63NxmfCLlUsBjvd3OBNBY&amp;utm_medium=3Demail&amp;utm_=
+source=3Djobalert&amp;utm_campaign=3DjobAlertAlert&amp;utm_content=3Dja-edi=
+talert-freq" target=3D"_blank" universal=3D"true">Imposta su settimanale</a=
+></td></tr><tr><td colSpan=3D"3" class=3D"css-1j0xffn ep11te12"></td></tr><=
+tr><td colSpan=3D"3" class=3D"css-ic9wqd ep11te12"><table cellSpacing=3D"0"=
+ cellPadding=3D"0" border=3D"0" width=3D"100%" class=3D"css-ip60z3 ep11te14=
+" style=3D"padding:0px"><tr><td class=3D"css-ip60z3 ep11te14" style=3D"marg=
+in:0px"></td></tr></table></td></tr><tr><td colSpan=3D"3" class=3D"css-1iz8=
+x5j ep11te12"><span class=3D"css-2pliid e1slim8i11">Candidarsi su cellulare=
+ =C3=A8 facile quando si carica il proprio CV</span></td></tr><tr><td colSp=
+an=3D"3" class=3D"css-1xhhlz5 ep11te12"><table border=3D"0" cellPadding=3D"=
+0" cellSpacing=3D"0" width=3D"100%" align=3D"center"><tr><td width=3D"46%" =
+class=3D"css-1s5dqo9 e1slim8i10"><a class=3D"css-96uds2 ep11te10" href=3D"h=
+ttps://www.glassdoor.it/member/profile/uploadResume.htm?resumeOriginHook=3D=
+EMAIL_JOBALERT&amp;JAK=3DKA98XUDzsETQBCFm4Njz6A:yzBCCdvGHrsJQ2b9n4qqhiB7EPk=
+vUF2JPxLE8EdVM8eWDwxh-yaHPIR7BVl-_RjO:MFanyAqSOl4RAHMttl8sDN63NxmfCLlUsBjvd=
+3OBNBY&amp;clickedOption=3Ddropbox&amp;utm_medium=3Demail&amp;utm_source=3D=
+jobalert&amp;utm_campaign=3DjobAlertAlert&amp;utm_content=3Dja-upload-resum=
+e" target=3D"_blank" universal=3D"true"><table border=3D"0" cellPadding=3D"=
+0" cellSpacing=3D"0" width=3D"100%" align=3D"center"><tr><td class=3D"css-1=
+ruxp1v e1slim8i8"><img src=3D"https://www.glassdoor.com/crs/mail/logos/drop=
+box-2016@2x.png" alt=3D"Dropbox" width=3D"40" height=3D"40"/></td></tr><tr>=
+<td class=3D"css-12lv0st e1slim8i9">Dropbox</td></tr></table></a></td><td w=
+idth=3D"46%" class=3D"css-1s5dqo9 e1slim8i10"><a class=3D"css-96uds2 ep11te=
+10" href=3D"https://www.glassdoor.it/member/profile/uploadResume.htm?clicke=
+dOption=3D=3Dgoogle-drive&amp;resumeOriginHook=3DEMAIL_JOBALERT&amp;JAK=3DK=
+A98XUDzsETQBCFm4Njz6A:yzBCCdvGHrsJQ2b9n4qqhiB7EPkvUF2JPxLE8EdVM8eWDwxh-yaHP=
+IR7BVl-_RjO:MFanyAqSOl4RAHMttl8sDN63NxmfCLlUsBjvd3OBNBY&amp;utm_medium=3Dem=
+ail&amp;utm_source=3Djobalert&amp;utm_campaign=3DjobAlertAlert&amp;utm_cont=
+ent=3Dja-upload-resume" target=3D"_blank" universal=3D"true"><table border=
+=3D"0" cellPadding=3D"0" cellSpacing=3D"0" width=3D"100%" align=3D"center">=
+<tr><td class=3D"css-1ruxp1v e1slim8i8"><img src=3D"https://www.glassdoor.c=
+om/crs/mail/logos/google-drive-2016@2x.png" alt=3D"Google Drive" width=3D"4=
+0" height=3D"40"/></td></tr><tr><td class=3D"css-12lv0st e1slim8i9">Google =
+Drive</td></tr></table></a></td></tr></table></td></tr><tr><td colSpan=3D"3=
+" class=3D"css-lpdpqj ep11te12"><table cellSpacing=3D"0" cellPadding=3D"0" =
+border=3D"0" width=3D"100%" class=3D"css-ip60z3 ep11te14" style=3D"padding:=
+0px"><tr><td class=3D"css-ip60z3 ep11te14" style=3D"margin:0px"></td></tr><=
+/table></td></tr><tr><td colSpan=3D"3" class=3D"css-8bz5ap ep11te12"></td><=
+/tr><tr><td colSpan=3D"3" class=3D"css-1of8vp0 e2c2s612"><table id=3D"Foote=
+r" cellPadding=3D"0" cellSpacing=3D"0" height=3D"100%" width=3D"100%" mode=
+=3D"dark" class=3D"css-wk1xqm e19qzqau0"><tbody><tr><td mode=3D"dark" class=
+=3D"css-13db5os e19qzqau2"><span><span class=3D"">Questo messaggio =C3=A8 s=
+tato inviato all'indirizzo email <a class=3D'footerLink' href=3D'mailto:pas=
+quale.monniello00@gmail.com' target=3D'_blank'>pasquale.monniello00@gmail.c=
+om</a>.</span></span><br/><a mode=3D"dark" target=3D"_blank" href=3D"https:=
+//www.glassdoor.it/about/privacy.htm?utm_medium=3Demail&amp;utm_source=3Djo=
+balert&amp;utm_campaign=3DjobAlertAlert&amp;utm_content=3Dja-privacy" class=
+=3D"css-1mtfgd0 e19qzqau1">Politica sulla privacy</a><span> | </span><a mod=
+e=3D"dark" target=3D"_blank" href=3D"https://www.glassdoor.it/member/accoun=
+t/emailSettings_input.htm?JAK=3DKA98XUDzsETQBCFm4Njz6A:yzBCCdvGHrsJQ2b9n4qq=
+hiB7EPkvUF2JPxLE8EdVM8eWDwxh-yaHPIR7BVl-_RjO:MFanyAqSOl4RAHMttl8sDN63NxmfCL=
+lUsBjvd3OBNBY&amp;utm_medium=3Demail&amp;utm_source=3Djobalert&amp;utm_camp=
+aign=3DjobAlertAlert&amp;utm_content=3Dja-email-preference&amp;utm_term=3De=
+ngageJobAlertDefaultTreatment" class=3D"css-1mtfgd0 e19qzqau1">Gestisci imp=
+ostazioni</a><span> | </span><a mode=3D"dark" target=3D"_blank" href=3D"htt=
+ps://www.glassdoor.it/profile/unsubscribeEmail.htm?key=3DPgyhopn:d5mn85WiPk=
+yUi6kyClcg&amp;emailType=3DJOB_ALERT&amp;emailCategory=3DJOB_ALERT&amp;encr=
+yptedUserId=3D89C24B3C9E5582CE62C61E7031981554&amp;JAK=3DKA98XUDzsETQBCFm4N=
+jz6A:yzBCCdvGHrsJQ2b9n4qqhiB7EPkvUF2JPxLE8EdVM8eWDwxh-yaHPIR7BVl-_RjO:MFany=
+AqSOl4RAHMttl8sDN63NxmfCLlUsBjvd3OBNBY&amp;utm_medium=3Demail&amp;utm_sourc=
+e=3Djobalert&amp;utm_campaign=3DjobAlertAlert&amp;utm_content=3Dja-unsubscr=
+ibe&amp;utm_term=3DengageJobAlertDefaultTreatment" class=3D"css-1mtfgd0 e19=
+qzqau1">Annulla ricezione</a><br/><br/><span><a mode=3D"dark" target=3D"_bl=
+ank" href=3D"https://www.glassdoor.it?utm_medium=3Demail&amp;utm_source=3Dj=
+obalert&amp;utm_campaign=3DjobAlertAlert&amp;utm_content=3Dja" class=3D"css=
+-1mtfgd0 e19qzqau1">Glassdoor</a></span><br/>300 Mission Street, 16th Floor=
+, San Francisco, CA 94105<br/><br/><span>Copyright =C2=A9 2008-2022, Glassd=
+oor, Inc. &quot;Glassdoor&quot; e il relativo logo sono marchi di propriet=
+=C3=A0 di Glassdoor, Inc.</span><br/></td></tr></tbody></table></td></tr></=
+table></td></tr></table></div>
+        <img src=3D"https://mail8.glassdoor.com/wf/open?upn=3Db-2FkHhrBz4uQ=
+3g7pVx50qTmhSAyzCBIi-2BwMLOCvH611orulx6dw-2Bq-2BdSOEKgalFo5JeHR2eFhD-2FhZCg=
+kX3uA7sUdrtnULKbx-2F0zZ8z-2FR7tyG4XpByaW-2BeFZL0FQXvBzHLKBpwyNho2sl-2BjKsv5=
+qLNQQ1Oe7k-2FdRlYfAiF3tTRLM6GFjWx5jD0-2Buq0d8Y0dYifkQGOeiOyfBzJEA1ZCK8Ga6iK=
+PfRpqeLXHpuOfQ5bLTyRsq8SlezjfrZy0eSPtQrGTy9B4oUrWm2i2gUtc7WpfY5QGJp2FXegM3D=
+U0clXDY8S8fmTJI6KuiiNErqWJbFZ-2BwjFctPKO1IoBCIzGMbY9lGuiB-2BLNkMw3qyREw6jIF=
+kGmQ9R0G5hNHdC1971XrHUbfExfFJU0UNME5yM-2BTVPnBpx06LgmKErjBYkhRmUjpYzFcW3gtL=
+MHPba6wtKrD9h4kuPrHkRKOh08DevpkawJ-2FGgPwCuT5P1FWmjODs1rcBvezI-2ByrWgzYfp1d=
+p6j9jL7QdN2F5MHqYAZ6HiOOHBxA-3D-3D" alt=3D"" width=3D"1" height=3D"1" borde=
+r=3D"0" style=3D"height:1px !important;width:1px !important;border-width:0 =
+!important;margin-top:0 !important;margin-bottom:0 !important;margin-right:=
+0 !important;margin-left:0 !important;padding-top:0 !important;padding-bott=
+om:0 !important;padding-right:0 !important;padding-left:0 !important;"/></b=
+ody>
+    </html>

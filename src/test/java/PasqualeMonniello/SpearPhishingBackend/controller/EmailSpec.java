@@ -14,6 +14,11 @@ import PasqualeMonniello.SpearPhishingBackend.model.Email;
 
 public class EmailSpec implements Specification<Email>{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public EmailSpec(SearchCriteria criteria) {
 		super();
 		this.criteria = criteria;

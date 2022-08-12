@@ -115,7 +115,7 @@ public class ParseFiles {
 			//creaimo l'ambiente per eseguire le query
 			
 			
-			String query  = "insert into emails (FK_target, content, isPhish) values(?,?,?)";
+			String query  = "insert into emails (subj, FK_target, content, isPhish) values(?,?,?,?)";
 			
 			JSONObject json = JSONBuilder.buildEmail(em);
 			
@@ -123,9 +123,10 @@ public class ParseFiles {
 			
 			PreparedStatement preparestmt = con.prepareStatement(query);
 			
-			preparestmt.setString(1, target);
-			preparestmt.setString(2,json.toString());
-			preparestmt.setBoolean(3, phish);
+			preparestmt.setString(1, em.getSubject());
+			preparestmt.setString(2, target);
+			preparestmt.setString(3,json.toString());
+			preparestmt.setBoolean(4, phish);
 			
 			preparestmt.executeUpdate();
 			

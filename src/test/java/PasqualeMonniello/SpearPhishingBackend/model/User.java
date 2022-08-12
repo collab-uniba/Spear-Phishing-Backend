@@ -30,6 +30,10 @@ public class User implements Serializable{
 
 	
 	
+	public User() {
+		super();
+	}
+	
 	public User(String email, String fname, String lname, String position, String phonenumber) {
 		super();
 		this.email = email;
