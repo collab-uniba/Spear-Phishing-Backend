@@ -25,7 +25,8 @@ public class ParseFiles {
 	public static String PATH = "E:\\\\CodeProjects\\\\Eclipse\\\\SpearPhishingBackend\\\\src\\\\emails\\";
 	
 	public static void main(String[] args) throws FileNotFoundException {
-		
+		final String email = "pasquale.monniello00@gmail.com";
+		File[] list = getFilesByEmail(email);
 	}
 	
 	public static File[] getFilesByEmail(String email){
@@ -35,7 +36,6 @@ public class ParseFiles {
 		for(File f:list) {
 			if(f.isFile()) {
 				Email e = EmailConverter.emlToEmail(f);
-				
 				uploadEmail(e, email, isEmailPhishing(f));
 			}
 		}
@@ -115,18 +115,17 @@ public class ParseFiles {
 			//creaimo l'ambiente per eseguire le query
 			
 			
-			String query  = "insert into emails (subj, FK_target, content, isPhish) values(?,?,?,?)";
+			String query  = "insert into emails (f_email, subj, FK_target, content, isPhish) values(?,?,?,?,?)";
 			
 			JSONObject json = JSONBuilder.buildEmail(em);
 			
-			
-			
 			PreparedStatement preparestmt = con.prepareStatement(query);
 			
-			preparestmt.setString(1, em.getSubject());
-			preparestmt.setString(2, target);
-			preparestmt.setString(3,json.toString());
-			preparestmt.setBoolean(4, phish);
+			preparestmt.setString(1, em.getFromRecipient().getAddress());
+			preparestmt.setString(2, em.getSubject());
+			preparestmt.setString(3, target);
+			preparestmt.setString(4,json.get("html").toString());
+			preparestmt.setBoolean(5, phish);
 			
 			preparestmt.executeUpdate();
 			

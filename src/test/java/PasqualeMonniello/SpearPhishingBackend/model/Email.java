@@ -17,6 +17,9 @@ public class Email implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column
+	private String f_email;
+	
 	@Column(nullable=false)
 	private String subj;
 	
@@ -48,6 +51,14 @@ public class Email implements Serializable {
 	
 	public void setContent(String content) {
 		this.content = content;
+	}
+	
+	public String getf_email() {
+		return f_email;
+	}
+
+	public void setf_email(String f_email) {
+		this.f_email = f_email;
 	}
 
 	public String getSubj() {

@@ -12,26 +12,26 @@ public class EvalKey implements Serializable{
 	 */
 	private static final long serialVersionUID = 3275658633527386733L;
 	@Id
-	private String FK_varchar;
+	private String FK_email;
 	@Id
 	private int FK_id;
 	
 	public EvalKey(String fK_varchar, int fK_id) {
 		super();
-		FK_varchar = fK_varchar;
+		FK_email = fK_varchar;
 		FK_id = fK_id;
 	}
 	
 	public EvalKey(String fK_varchar, long fK_id) {
 		super();
-		FK_varchar = fK_varchar;
+		FK_email = fK_varchar;
 		FK_id = (int) fK_id;
 	}
-	public String getFK_varchar() {
-		return FK_varchar;
+	public String getFK_email() {
+		return FK_email;
 	}
-	public void setFK_varchar(String fK_varchar) {
-		FK_varchar = fK_varchar;
+	public void setFK_email(String FK_email) {
+		this.FK_email = FK_email;
 	}
 	public int getFK_id() {
 		return FK_id;

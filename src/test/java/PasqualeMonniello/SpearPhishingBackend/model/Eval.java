@@ -19,7 +19,7 @@ public class Eval implements Serializable {
 	
 	@Id
 	@Column(nullable=false)
-	private String FK_varchar;
+	private String FK_email;
 	
 	@Id
 	@Column(nullable=false)
@@ -27,12 +27,12 @@ public class Eval implements Serializable {
 	
 	private boolean isEvalPhish;
 
-	public String getFK_varchar() {
-		return FK_varchar;
+	public String getFK_email() {
+		return FK_email;
 	}
 
-	public void setFK_varchar(String fK_varchar) {
-		FK_varchar = fK_varchar;
+	public void setFK_email(String FK_email) {
+		this.FK_email = FK_email;
 	}
 
 	public int getFK_id() {

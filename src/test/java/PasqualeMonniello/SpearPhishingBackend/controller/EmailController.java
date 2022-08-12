@@ -24,6 +24,7 @@ public class EmailController {
 
 	@Autowired
 	EmailsRepository emailRepository;
+	
 	@CrossOrigin
 	@GetMapping("/emails/{target}")
 	public List<Email> getAllEmail(@PathVariable(value="target") String target) {

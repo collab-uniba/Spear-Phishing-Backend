@@ -1,7 +1,7 @@
 CREATE SCHEMA IF NOT EXISTS spearphishing;
 use spearphishing;
 
-create table users (
+create table IF NOT EXISTS users (
 	email varchar(255) UNIQUE PRIMARY KEY,
     fname varchar(15) NOT NULL,
     lname varchar(25) NOT NULL,
@@ -9,15 +9,16 @@ create table users (
     phonenumber varchar(10)
 );
 
-create table emails (
+create table IF NOT EXISTS emails (
     id int auto_increment PRIMARY KEY,
+    f_email varchar(255),
     subj varchar(255),
     FK_target varchar(255) references users(email),
     content MEDIUMTEXT,
     isPhish boolean
 );
 
-create table evals (
+create table IF NOT EXISTS evals (
 	FK_email varchar(255) references users(email),
     FK_id int REFERENCES emails(id),
     isEvalPhish boolean,
