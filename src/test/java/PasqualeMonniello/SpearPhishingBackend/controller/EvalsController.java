@@ -66,7 +66,7 @@ public class EvalsController {
 	
 	@CrossOrigin
 	@DeleteMapping("/eval/{id}")
-	public ResponseEntity<?> postEval(@PathVariable(value="id") Long evalId) {
+	public ResponseEntity<?> deleteEval(@PathVariable(value="id") Long evalId) {
 		Eval e = evalRepository.findById(evalId).orElseThrow(()-> new RuntimeException("Evaluation not found"));
 		
 		evalRepository.delete(e);
