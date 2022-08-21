@@ -25,6 +25,15 @@ create table IF NOT EXISTS evals (
     is_eval_phish boolean
 );
 
+create table IF NOT EXISTS bigfive (
+	u_email varchar(255),
+    extraversion int,
+    agreebleness int,
+    imagination int,
+    nevroticism int,
+    consciousness int
+);
+
 /* Views for TP/TN/FP/FN accuracy queries */
 
 CREATE VIEW ACC_QUERY as 
