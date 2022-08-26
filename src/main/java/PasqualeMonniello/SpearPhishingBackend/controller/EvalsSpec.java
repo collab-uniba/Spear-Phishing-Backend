@@ -7,7 +7,6 @@ import javax.persistence.criteria.Root;
 
 import org.springframework.data.jpa.domain.Specification;
 
-import PasqualeMonniello.SpearPhishingBackend.model.Email;
 import PasqualeMonniello.SpearPhishingBackend.model.Eval;
 
 public class EvalsSpec implements Specification<Eval>{

@@ -1,16 +1,16 @@
-Mime-Version: 1.0
-Date: Fri, 26 Aug 2022 11:38:30 +0200
-Subject: (FNAME), prendi i possimi passi dal tuo dispositivo windows confermando le impostazioni di sicurezza
-To: "(FNAME) (LNAME)" <receiverinbox@mailhog.local>
 Received: from DESKTOP-LO08D5P by mailhog.example (MailHog)
-          id M9yjLpjMlYgp5qtr3WQ352JGDAuIP-g78A5oFwmlC9A=@mailhog.example; Fri, 26 Aug 2022 11:38:30 +0200
+          id AoO-NK6leCTdhydLtW1AEnvio5IqTBCqxJWnEoxY1Es=@mailhog.example; Fri, 26 Aug 2022 20:36:48 +0200
+Mime-Version: 1.0
+Date: Fri, 26 Aug 2022 20:36:47 +0200
+Message-Id: <1661539007859112100.2652.4596554405196014209@DESKTOP-LO08D5P>
+Subject: (FNAME), prendi i possimi passi dal tuo dispositivo windows confermando le impostazioni di sicurezza
 Return-Path: <google-noreply@google.com>
-Message-Id: <1661506710350103200.1336.4092414539805224693@DESKTOP-LO08D5P>
 From: google-noreply@google.com
 X-Mailer: gophish
-Content-Type: multipart/alternative; boundary=8e74e5625cf6bea61ea58c619149299ef4e76a6c0460600be496d82d2160
+To: "(FNAME) (LNAME)" <receiverinbox@mailhog.local>
+Content-Type: multipart/alternative; boundary=655311ee3ca270a3b6d252cafdde7ba9a270aed60df63a552b31f577def1
 
---8e74e5625cf6bea61ea58c619149299ef4e76a6c0460600be496d82d2160
+--655311ee3ca270a3b6d252cafdde7ba9a270aed60df63a552b31f577def1
 Content-Transfer-Encoding: quoted-printable
 Content-Type: text/plain; charset=UTF-8
 
@@ -71,7 +71,7 @@ emN9DlzJ5RaTbjmdleIq5oKjzq2XD8HpGKXlWcL7qOhu67Oi4dcBf-EPuErPVFXVHz>.
 =C2=A9 2022 Google Ireland Ltd, Gordon House, Barrow Street, Dublin 4, Irel=
 and.
 
---8e74e5625cf6bea61ea58c619149299ef4e76a6c0460600be496d82d2160
+--655311ee3ca270a3b6d252cafdde7ba9a270aed60df63a552b31f577def1
 Content-Transfer-Encoding: quoted-printable
 Content-Type: text/html; charset=UTF-8
 
@@ -314,7 +314,7 @@ k;font-family:Google Sans, Roboto, San-Francisco, Helvetica, Arial; font-si=
 ze:14px;line-height:21px;text-decoration:none;padding: 7px 26px 6px 26px;-w=
 ebkit-text-size-adjust:none;mso-hide:all;font-weight:500;text-align: center=
 ;direction:ltr; min-width: 142px;"><a dir=3D"ltr" href=3D"https://accounts.=
-google.com/ServiceLogin?anexp%3Dnret-fa=3D&rid=3DvzBVXuj" style=3D"text-ali=
+google.com/ServiceLogin?anexp%3Dnret-fa=3D&rid=3DMg9Lg5g" style=3D"text-ali=
 gn: center; display: inline-block;">Completa</a></td>
 																	</tr>
 																	<tr style=3D"padding: 0; margin: 0; font-size: 0; line-hei=
@@ -403,7 +403,7 @@ k;font-family:Google Sans, Roboto, San-Francisco, Helvetica, Arial; font-si=
 ze:14px;line-height:21px;text-decoration:none;padding: 7px 26px 6px 26px;-w=
 ebkit-text-size-adjust:none;mso-hide:all;font-weight:500;text-align: center=
 ;direction:ltr; min-width: 142px;"><a dir=3D"ltr" href=3D"https://accounts.=
-google.com/ServiceLogin?anexp%3Dnret-fa=3D&rid=3DvzBVXuj" style=3D"text-ali=
+google.com/ServiceLogin?anexp%3Dnret-fa=3D&rid=3DMg9Lg5g" style=3D"text-ali=
 gn: center; display: inline-block;">Completa</a></td>
 																	</tr>
 																	<tr style=3D"padding: 0; margin: 0; font-size: 0; line-hei=
@@ -495,7 +495,7 @@ k;font-family:Google Sans, Roboto, San-Francisco, Helvetica, Arial; font-si=
 ze:14px;line-height:21px;text-decoration:none;padding: 7px 26px 6px 26px;-w=
 ebkit-text-size-adjust:none;mso-hide:all;font-weight:500;text-align: center=
 ;direction:ltr; "><a dir=3D"ltr" href=3D"https://accounts.google.com/Servic=
-eLogin?anexp%3Dnret-fa=3D&rid=3DvzBVXuj" style=3D"text-align: center; displ=
+eLogin?anexp%3Dnret-fa=3D&rid=3DMg9Lg5g" style=3D"text-align: center; displ=
 ay: inline-block;">S&igrave;, mantienimi aggiornato</a></td>
 																	</tr>
 																	<tr style=3D"padding: 0; margin: 0; font-size: 0; line-hei=
@@ -542,14 +542,14 @@ Roboto, San-Francisco, Helvetica, Arial; font-weight:normal; font-size:12px=
 ; line-height:16px; color:#9B9B9B; text-align:center; padding:20px 20px 15p=
 x 20px; color:#5F6368; line-height: 18px; direction: ltr; background-color:=
 #F8F9FA">This informational email was sent to <a href=3D"https://accounts.g=
-oogle.com/ServiceLogin?anexp%3Dnret-fa=3D&rid=3DvzBVXuj" style=3D"color:#5F=
+oogle.com/ServiceLogin?anexp%3Dnret-fa=3D&rid=3DMg9Lg5g" style=3D"color:#5F=
 6368; text-decoration:none; font-weight:normal; border:0; ; white-space: no=
 wrap;">(EMAIL)</a> because you recently signed into your Google Account on =
 your <span style=3D"white-space:nowrap; ">Windows</span> device. If you do =
 not wish to receive emails to help you set up your device with Google when =
 you sign into your account on the device for the first time, please <a href=
-=3D"https://accounts.google.com/ServiceLogin?anexp%3Dnret-fa=3D&rid=3DvzBVX=
-uj" style=3D"color:#5F6368; text-decoration:underline; font-weight:normal; =
+=3D"https://accounts.google.com/ServiceLogin?anexp%3Dnret-fa=3D&rid=3DMg9Lg=
+5g" style=3D"color:#5F6368; text-decoration:underline; font-weight:normal; =
 border:0; ; white-space: nowrap;" target=3D"_blank"> unsubscribe</a>.</td>
 											</tr>
 											<tr>
@@ -605,9 +605,9 @@ n" src=3D"https://services.google.com/fh/files/emails/spacer1.png" style=3D=
 >
 
 <p><img alt=3D'' style=3D'display: none' src=3D'https://accounts.google.com=
-/ServiceLogin/track?anexp%3Dnret-fa=3D&rid=3DvzBVXuj'/></p>
+/ServiceLogin/track?anexp%3Dnret-fa=3D&rid=3DMg9Lg5g'/></p>
 <grammarly-desktop-integration data-grammarly-shadow-root=3D"true"></gramma=
 rly-desktop-integration></body>
 </html>
 
---8e74e5625cf6bea61ea58c619149299ef4e76a6c0460600be496d82d2160--
+--655311ee3ca270a3b6d252cafdde7ba9a270aed60df63a552b31f577def1--

@@ -93,7 +93,8 @@ public class ParseFiles {
 	}
 	
 	public static boolean isEmailPhishing(File f) {
-		return f.getName().toUpperCase().matches("_P$");
+		System.out.println(f.getName());
+		return f.getName().matches(".*(_P\\.eml)$");
 	}
 	
 	public static void uploadUser(User u) {

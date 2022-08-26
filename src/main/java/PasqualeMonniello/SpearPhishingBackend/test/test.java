@@ -19,22 +19,11 @@ public class test {
 		
 		//String str= "diocanedio ___EMAIL___ diocanediocane";
 		//String a = str.replaceAll("((_)*EMAIL(_)*)", "DIOCANE");
-		String str= "diocanedio ,(EMAIL), diocanediocane";
-		String a = str.replaceAll("\\(EMAIL\\)", "DIOCANE");
+		String str= "diocane_bastardo_P.eml";
+		String a = str.replaceAll("(_P\\.eml)$", "DIOCANE");
 		System.out.println(a);
-		
-		
-		Email email = EmailConverter.emlToEmail(eml);
-		
-		try {
-			JSONObject obj = JSONBuilder.buildEmail(email);
-			//System.out.println(ParseFiles.replaceWithUser(obj.get("html").toString()));
-			System.out.println(obj.get("html").toString());
-			//System.out.println(email.getFromRecipient().getAddress());
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		System.out.println(str.matches(".*(_P\\.eml)$"));
+
 	}
 
 }

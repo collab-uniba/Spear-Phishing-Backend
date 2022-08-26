@@ -13,7 +13,7 @@ public class JSONBuilder {
 		jsonEmail.put("to", email.getRecipients().get(0).getAddress());
 		jsonEmail.put("subject", email.getSubject());
 		jsonEmail.put("html", email.getHTMLText());
-		jsonEmail.put("attachments", email.getAttachments());
+		//jsonEmail.put("attachments", email.getAttachments());
 		
 		return jsonEmail;
 	}

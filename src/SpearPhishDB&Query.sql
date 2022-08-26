@@ -37,31 +37,34 @@ create table IF NOT EXISTS bigfive (
 /* Views for TP/TN/FP/FN accuracy queries */
 
 CREATE VIEW ACC_QUERY as 
-SELECT FK_email, FK_id, isPhish, isEvalPhish
-FROM emails, evals
-WHERE id = FK_id;
+SELECT FK_email, FK_id, isPhish, is_eval_phish
+FROM emails as e, evals as es
+WHERE e.id = es.FK_id;
+
+SELECT *
+FROM ACC_QUERY;
 
 /*Group By TP/TN/FP/TN*/
-SELECT COUNT(*)
+SELECT isPhish, is_eval_phish, COUNT(*)
 FROM ACC_QUERY 
-GROUP BY (isPhish, isEvalPhish);
+GROUP BY isPhish, is_eval_phish;
 
 /* TPs Query */
 SELECT * 
 FROM ACC_QUERY 
-WHERE isPhish=true AND isEvalPhish=true;
+WHERE isPhish=true AND is_eval_phish=true;
 
 /* TN Query */
 SELECT * 
 FROM ACC_QUERY 
-WHERE isPhish=false AND isEvalPhish=false;
+WHERE isPhish=true AND is_eval_phish=false;
 
 /* FP Query */
 SELECT * 
 FROM ACC_QUERY 
-WHERE isPhish=false AND isEvalPhish=true;
+WHERE isPhish=false AND is_eval_phish=true;
 
 /* FN Query */
 SELECT * 
 FROM ACC_QUERY 
-WHERE isPhish=false AND isEvalPhish=false;
+WHERE isPhish=false AND is_eval_phish=false;
