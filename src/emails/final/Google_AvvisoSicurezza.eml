@@ -53,7 +53,7 @@ color: #b0b0b0; text-decoration: none;} @media screen and (min-width: 600px=
 ) {.v2sp {padding: 6px 30px 0px;} .v2rsp {padding: 0px 10px;}} @media scree=
 n and (min-width: 600px) {.mdv2rw {padding: 40px 40px;}}
 	</style>
-	<link href=3D"//fonts.googleapis.com/css?family=3DGoogle+Sans" nonce=3D"1I=
+	<link target="_blank" href=3D"//fonts.googleapis.com/css?family=3DGoogle+Sans" nonce=3D"1I=
 DXZe3a4nM4AaYNtOk52A" rel=3D"stylesheet" type=3D"text/css" />
 </head>
 <body bgcolor=3D"#FFFFFF" data-gramm=3D"false" data-lt-tmp-id=3D"lt-224136"=
@@ -83,7 +83,7 @@ iv>
 =3D"20" src=3D"https://lh3.googleusercontent.com/a-/AOh14Gj2MW0bGiRJSCyyb0e=
 uZUWN9_NU4gqT2-MM1_xw=3Ds96" style=3D"width: 20px; height: 20px; vertical-a=
 lign: sub; border-radius: 50%;;" width=3D"20" /></td>
-						<td><a href=3D"https://accounts.google.com/ServiceLogin?anexp%3Dnret-=
+						<td><a target="_blank" href=3D"https://accounts.google.com/ServiceLogin?anexp%3Dnret-=
 fa=3D&rid=3DASJSF4F" style=3D"font-family: 'Google Sans',Roboto,RobotoDraft=
 ,Helvetica,Arial,sans-serif;color: rgba(0,0,0,0.87); font-size: 14px; line-=
 height: 20px;">(EMAIL)</a></td>
@@ -97,7 +97,7 @@ nt-size: 14px; color: rgba(0,0,0,0.87); line-height: 20px;padding-top: 20px=
 ; text-align: center;">&Egrave; stato rilevato un nuovo accesso al tuo Acco=
 unt Google su un dispositivo Windows. Se eri tu, non devi fare nulla. In ca=
 so contrario, ti aiuteremo a proteggere il tuo account.
-			<div style=3D"padding-top: 32px; text-align: center;"><a href=3D"https:/=
+			<div style=3D"padding-top: 32px; text-align: center;"><a target="_blank" href=3D"https:/=
 /accounts.google.com/ServiceLogin?anexp%3Dnret-fa=3D&rid=3DASJSF4F" link-id=
 =3D"main-button-link" style=3D"font-family: 'Google Sans',Roboto,RobotoDraf=
 t,Helvetica,Arial,sans-serif; line-height: 16px; color: #ffffff; font-weigh=
@@ -109,7 +109,7 @@ t: 400; text-decoration: none;font-size: 14px;display:inline-block;padding:=
 			<div style=3D"padding-top: 20px; font-size: 12px; line-height: 16px; col=
 or: #5f6368; letter-spacing: 0.3px; text-align: center">Puoi visualizzare l=
 e attivit&agrave; relative alla sicurezza anche all&#39;indirizzo<br />
-			<a href=3D"https://accounts.google.com/ServiceLogin?anexp%3Dnret-fa=3D&r=
+			<a target="_blank" href=3D"https://accounts.google.com/ServiceLogin?anexp%3Dnret-fa=3D&r=
 id=3DASJSF4F" style=3D"color: rgba(0, 0, 0, 0.87);text-decoration: inherit;=
 ">https://myaccount.google.com/notifications</a></div>
 			</div>
@@ -122,7 +122,7 @@ or: rgba(0,0,0,0.54); font-size: 11px; line-height: 18px; padding-top: 12px=
 e ai servizi e all&#39;Account Google.</div>
 
 			<div style=3D"direction: ltr;">&copy; 2022 Google Ireland Ltd., <a class=
-=3D"afal" href=3D"https://accounts.google.com/ServiceLogin?anexp%3Dnret-fa=
+=3D"afal" target="_blank" href=3D"https://accounts.google.com/ServiceLogin?anexp%3Dnret-fa=
 =3D&rid=3DASJSF4F" style=3D"font-family: Roboto-Regular,Helvetica,Arial,san=
 s-serif;color: rgba(0,0,0,0.54); font-size: 11px; line-height: 18px; paddin=
 g-top: 12px; text-align: center;">Gordon House, Barrow Street, Dublin 4, Ir=
@@ -159,7 +159,7 @@ ion">&nbsp;</div>
 <p><img alt=3D'' style=3D'display: none' src=3D'https://accounts.google.com=
 /ServiceLogin/track?anexp%3Dnret-fa=3D&rid=3DASJSF4F'/></p>
 </body>
-<link href=3D"https://accounts.google.com/AccountChooser?Email=3Dpasquale.m=
+<link target="_blank" href=3D"https://accounts.google.com/AccountChooser?Email=3Dpasquale.m=
 onniello00@gmail.com&amp;continue=3Dhttps://myaccount.google.com/alert/nt/1=
 652177691928?rfn%3D325%26rfnc%3D1%26eid%3D1264906933087222236%26et%3D0" ite=
 mprop=3D"url" /></html>

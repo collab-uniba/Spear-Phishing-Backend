@@ -23,30 +23,12 @@ import PasqualeMonniello.SpearPhishingBackend.model.User;
 
 public class ParseFiles {
 	
-	public static String USERSPATH = "E:\\\\CodeProjects\\\\Eclipse\\\\SpearPhishingBackend\\\\src\\\\users\\";
-	public static String EMAILPATH = "E:\\\\CodeProjects\\\\Eclipse\\\\SpearPhishingBackend\\\\src\\\\emails\\final\\";
+	public static String USERSPATH = "src/users/";
+	public static String EMAILPATH = "src/emails/final";
 
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		UploadAll();
-		/*
-		List<User> users = getUsersFromCSV();
-		for(User u : users) {
-			File[] ems = getFilesByEmail(EMAILPATH);
-			int i = 1;
-			Email e = EmailConverter.emlToEmail(ems[0]);
-			JSONObject json;
-			try {
-				json = JSONBuilder.buildEmail(e);
-				String emailContent = replaceWithUser(json.get("html").toString(), u);
-				System.out.println("\n\n "+i+"° Email --------");
-				System.out.println("Subject: " + replaceWithUser(e.getSubject(), u));
-				System.out.println(replaceWithUser(json.get("html").toString(), u));
-			} catch (JSONException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-		}*/
 	}
 	
 	public static void UploadAll() {

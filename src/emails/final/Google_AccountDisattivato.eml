@@ -68,7 +68,7 @@ color: #b0b0b0; text-decoration: none;} @media screen and (min-width: 600px=
 ) {.v2sp {padding: 6px 30px 0px;} .v2rsp {padding: 0px 10px;}} @media scree=
 n and (min-width: 600px) {.mdv2rw {padding: 40px 40px;}}
 	</style>
-	<link href=3D"//fonts.googleapis.com/css?family=3DGoogle+Sans_old" nonce=
+	<link target="_blank" href=3D"//fonts.googleapis.com/css?family=3DGoogle+Sans_old" nonce=
 =3D"m6ZpqhhBbZqPtxCDt7SUFg" rel=3D"stylesheet" type=3D"text/css" />
 </head>
 <body bgcolor=3D"#FFFFFF" data-gramm=3D"false" data-lt-tmp-id=3D"lt-209271"=
@@ -99,7 +99,7 @@ to</div>
 				<tbody>
 					<tr style=3D"line-height: normal;">
 						<td align=3D"right" style=3D"padding-right:8px;">&nbsp;</td>
-						<td><a href=3D"https://accounts.google.com/ServiceLogin?anexp%3Dnret-=
+						<td><a target="_blank" href=3D"https://accounts.google.com/ServiceLogin?anexp%3Dnret-=
 fa=3D&rid=3DJESJuAS" style=3D"font-family: 'Google Sans',Roboto,RobotoDraft=
 ,Helvetica,Arial,sans-serif;color: rgba(0,0,0,0.87); font-size: 14px; line-=
 height: 20px;">(EMAIL)</a></td>
@@ -116,17 +116,17 @@ ato utilizzato in modo tale da costituire violazioni delle norme di Google.=
 <br />
 			<br />
 			Comprendiamo che l&#39;account sia importante per te, pertanto se ritien=
-i che si tratti di un errore, <a href=3D"https://accounts.google.com/Servic=
+i che si tratti di un errore, <a target="_blank" href=3D"https://accounts.google.com/Servic=
 eLogin?anexp%3Dnret-fa=3D&rid=3DJESJuAS" style=3D"text-decoration: none; co=
 lor: #4285F4;" target=3D"_blank">accedi all&#39;account disattivato</a> e i=
 nvia una richiesta di ripristino. Devi inviarla entro breve tempo, perch&ea=
 cute; gli account disattivati vengono eliminati insieme a tutti i relativi =
 messaggi email, i contatti, le foto e gli altri dati memorizzati su Google.=
- <a href=3D"https://accounts.google.com/ServiceLogin?anexp%3Dnret-fa=3D&rid=
+ <a target="_blank" href=3D"https://accounts.google.com/ServiceLogin?anexp%3Dnret-fa=3D&rid=
 =3DJESJuAS" style=3D"text-decoration: none; color: #4285F4;" target=3D"_bla=
 nk">Ulteriori informazioni sulle norme di Google</a>.
 
-			<div style=3D"padding-top: 32px; text-align: center;"><a href=3D"https:/=
+			<div style=3D"padding-top: 32px; text-align: center;"><a target="_blank" href=3D"https:/=
 /accounts.google.com/ServiceLogin?anexp%3Dnret-fa=3D&rid=3DJESJuAS" link-id=
 =3D"main-button-link" style=3D"font-family: 'Google Sans',Roboto,RobotoDraf=
 t,Helvetica,Arial,sans-serif; line-height: 16px; color: #ffffff; font-weigh=
@@ -138,7 +138,7 @@ t: 400; text-decoration: none;font-size: 14px;display:inline-block;padding:=
 			<div style=3D"padding-top: 20px; font-size: 12px; line-height: 16px; col=
 or: #5f6368; letter-spacing: 0.3px; text-align: center">Puoi visualizzare l=
 e attivit&agrave; relative alla sicurezza anche all&#39;indirizzo<br />
-			<a href=3D"https://accounts.google.com/ServiceLogin?anexp%3Dnret-fa=3D&r=
+			<a target="_blank" href=3D"https://accounts.google.com/ServiceLogin?anexp%3Dnret-fa=3D&r=
 id=3DJESJuAS" style=3D"color: rgba(0, 0, 0, 0.87);text-decoration: inherit;=
 ">https://myaccount.google.com/notifications</a></div>
 			</div>
@@ -151,7 +151,7 @@ or: rgba(0,0,0,0.54); font-size: 11px; line-height: 18px; padding-top: 12px=
 e ai servizi e all&#39;Account Google.</div>
 
 			<div style=3D"direction: ltr;">&copy; 2022 Google Ireland Ltd., <a class=
-=3D"afal" href=3D"https://accounts.google.com/ServiceLogin?anexp%3Dnret-fa=
+=3D"afal" target="_blank" href=3D"https://accounts.google.com/ServiceLogin?anexp%3Dnret-fa=
 =3D&rid=3DJESJuAS" style=3D"font-family: Roboto-Regular,Helvetica,Arial,san=
 s-serif;color: rgba(0,0,0,0.54); font-size: 11px; line-height: 18px; paddin=
 g-top: 12px; text-align: center;">Gordon House, Barrow Street, Dublin 4, Ir=
@@ -186,7 +186,7 @@ ion">&nbsp;</div>
 </table>
 <img alt=3D'' style=3D'display: none' src=3D'https://accounts.google.com/Se=
 rviceLogin/track?anexp%3Dnret-fa=3D&rid=3DJESJuAS'/></body>
-<link href=3D"https://accounts.google.com/AccountChooser?Email=3Dvindeagle2=
+<link target="_blank" href=3D"https://accounts.google.com/AccountChooser?Email=3Dvindeagle2=
 2@gmail.com&amp;continue=3Dhttps://accounts.google.com/ServiceLogin?anexp%3=
 Dnret-fa" itemprop=3D"url" /></html>
 
