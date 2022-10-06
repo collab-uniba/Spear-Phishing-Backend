@@ -6,7 +6,10 @@ create table IF NOT EXISTS users (
     fname varchar(15) NOT NULL,
     lname varchar(25) NOT NULL,
     position varchar(40),
-    phonenumber varchar(10)
+    phonenumber varchar(10),
+	sex CHAR,
+	age_category int,
+	participant_number int
 );
 
 create table IF NOT EXISTS emails (
@@ -26,7 +29,7 @@ create table IF NOT EXISTS evals (
 );
 
 create table IF NOT EXISTS bigfive (
-	u_email varchar(255),
+	u_email varchar(255) PRIMARY KEY REFERENCES users(email),
     extraversion int,
     agreebleness int,
     imagination int,

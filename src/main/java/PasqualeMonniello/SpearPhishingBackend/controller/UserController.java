@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import PasqualeMonniello.SpearPhishingBackend.Builders.UserNotFoundException;
+import PasqualeMonniello.SpearPhishingBackend.Exceptions.UserNotFoundException;
 import PasqualeMonniello.SpearPhishingBackend.model.User;
 import PasqualeMonniello.SpearPhishingBackend.repository.UsersRepository;
 

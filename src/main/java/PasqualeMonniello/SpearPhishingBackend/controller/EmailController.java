@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import PasqualeMonniello.SpearPhishingBackend.Builders.EmailNotfFoundException;
+import PasqualeMonniello.SpearPhishingBackend.Exceptions.EmailNotfFoundException;
 import PasqualeMonniello.SpearPhishingBackend.model.Email;
 import PasqualeMonniello.SpearPhishingBackend.repository.EmailsRepository;
 
